@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Quantum Crypt Lab</title><link>https://www.quantumcryptlab.org/</link><description>Recent content on Quantum Crypt Lab</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.quantumcryptlab.org/index.xml" rel="self" type="application/rss+xml"/><item><title>Introduction to Quantum Computing</title><link>https://www.quantumcryptlab.org/quantum-computing/introduction-quantum-computing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/quantum-computing/introduction-quantum-computing/</guid><description>&lt;p>Quantum computing is a revolutionary technology that harnesses the principles of quantum mechanics to process information in fundamentally new ways. Unlike classical computers that we use every day, quantum computers operate based on quantum phenomena that seem strange but offer incredible potential.&lt;/p>
+&lt;h2 id="key-concepts">
+ Key Concepts
+ &lt;a class="anchor" href="#key-concepts">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="quantum-bits-qubits">
+ Quantum Bits (Qubits)
+ &lt;a class="anchor" href="#quantum-bits-qubits">#&lt;/a>
+&lt;/h3>
+&lt;p>Classical computers use bits that are either 0 or 1, like a light switch that&amp;rsquo;s either off or on. Quantum bits (qubits) are different in two amazing ways:&lt;/p></description></item><item><title>Photon Polarization</title><link>https://www.quantumcryptlab.org/quantum-physics/photon-polarization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/quantum-physics/photon-polarization/</guid><description/></item><item><title>Quantum Entanglement</title><link>https://www.quantumcryptlab.org/quantum-physics/quantum-entanglement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/quantum-physics/quantum-entanglement/</guid><description>&lt;h1 id="quantum-entanglement">
+ Quantum Entanglement
+ &lt;a class="anchor" href="#quantum-entanglement">#&lt;/a>
+&lt;/h1>
+&lt;p>Quantum entanglement is a fascinating phenomenon where two or more particles become correlated in such a way that the quantum state of each particle cannot be described independently, even when separated by large distances.&lt;/p>
+&lt;h2 id="mathematical-description">
+ Mathematical Description
+ &lt;a class="anchor" href="#mathematical-description">#&lt;/a>
+&lt;/h2>
+&lt;p>The simplest example of an entangled state is the Bell state, also known as an EPR pair. For two qubits, one of the Bell states can be written as:&lt;/p></description></item><item><title>Quantum Superposition</title><link>https://www.quantumcryptlab.org/quantum-physics/quantum-superposition/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/quantum-physics/quantum-superposition/</guid><description>&lt;h1 id="quantum-superposition">
+ Quantum Superposition
+ &lt;a class="anchor" href="#quantum-superposition">#&lt;/a>
+&lt;/h1>
+&lt;p>Quantum superposition is one of the fundamental principles of quantum mechanics. It states that a quantum system can exist in multiple states simultaneously until it is measured.&lt;/p>
+&lt;h2 id="mathematical-description">
+ Mathematical Description
+ &lt;a class="anchor" href="#mathematical-description">#&lt;/a>
+&lt;/h2>
+&lt;p>In quantum mechanics, we can describe a quantum state |ψ⟩ as a superposition of basis states. For example, a qubit can be written as:&lt;/p>
+
+&lt;link rel="stylesheet" href="https://www.quantumcryptlab.org/katex/katex.min.css" />
+&lt;script defer src="https://www.quantumcryptlab.org/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://www.quantumcryptlab.org/katex/auto-render.min.js" onload="renderMathInElement(document.body);">&lt;/script>&lt;span>
+ \[
+|\psi\rangle = \alpha|0\rangle + \beta|1\rangle
+\]
+&lt;/span>
+
+&lt;p>where α and β are complex numbers satisfying:&lt;/p></description></item><item><title>test</title><link>https://www.quantumcryptlab.org/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/about/</guid><description>&lt;p>Content goes here&amp;hellip;&lt;/p></description></item><item><title>test</title><link>https://www.quantumcryptlab.org/ai/ai-security/homomorphic-encryption/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/ai/ai-security/homomorphic-encryption/</guid><description>&lt;p>Content goes here&amp;hellip;&lt;/p></description></item><item><title/><link>https://www.quantumcryptlab.org/ai/ai-in-crypto/zkml-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/ai/ai-in-crypto/zkml-overview/</guid><description/></item></channel></rss>
