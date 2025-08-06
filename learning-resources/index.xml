@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Learning Resources on Quantum Crypt Lab</title><link>https://www.quantumcryptlab.org/learning-resources/</link><description>Recent content in Learning Resources on Quantum Crypt Lab</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.quantumcryptlab.org/learning-resources/index.xml" rel="self" type="application/rss+xml"/><item><title>Books</title><link>https://www.quantumcryptlab.org/learning-resources/books/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/learning-resources/books/</guid><description>&lt;h1 id="books">
+ Books
+ &lt;a class="anchor" href="#books">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="quantum-computing">
+ Quantum Computing
+ &lt;a class="anchor" href="#quantum-computing">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="beginner-level">
+ Beginner Level
+ &lt;a class="anchor" href="#beginner-level">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="intermediate-level">
+ Intermediate Level
+ &lt;a class="anchor" href="#intermediate-level">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="advanced-level">
+ Advanced Level
+ &lt;a class="anchor" href="#advanced-level">#&lt;/a>
+&lt;/h3>
+&lt;h2 id="cryptography">
+ Cryptography
+ &lt;a class="anchor" href="#cryptography">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="classical-cryptography">
+ Classical Cryptography
+ &lt;a class="anchor" href="#classical-cryptography">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="quantum-cryptography">
+ Quantum Cryptography
+ &lt;a class="anchor" href="#quantum-cryptography">#&lt;/a>
+&lt;/h3>
+&lt;h2 id="mathematics">
+ Mathematics
+ &lt;a class="anchor" href="#mathematics">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="linear-algebra">
+ Linear Algebra
+ &lt;a class="anchor" href="#linear-algebra">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="group-theory">
+ Group Theory
+ &lt;a class="anchor" href="#group-theory">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="boolean-algebra">
+ Boolean Algebra
+ &lt;a class="anchor" href="#boolean-algebra">#&lt;/a>
+&lt;/h3>
+&lt;h2 id="artificial-intelligence">
+ Artificial Intelligence
+ &lt;a class="anchor" href="#artificial-intelligence">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="machine-learning">
+ Machine Learning
+ &lt;a class="anchor" href="#machine-learning">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="ai-in-cryptography">
+ AI in Cryptography
+ &lt;a class="anchor" href="#ai-in-cryptography">#&lt;/a>
+&lt;/h3>
+&lt;h2 id="research-and-advanced-topics">
+ Research and Advanced Topics
+ &lt;a class="anchor" href="#research-and-advanced-topics">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="quantum-machine-learning">
+ Quantum Machine Learning
+ &lt;a class="anchor" href="#quantum-machine-learning">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="zero-knowledge-proofs">
+ Zero-Knowledge Proofs
+ &lt;a class="anchor" href="#zero-knowledge-proofs">#&lt;/a>
+&lt;/h3>
+&lt;dl>
+
+&lt;/dl></description></item><item><title>Research Papers</title><link>https://www.quantumcryptlab.org/learning-resources/papers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/learning-resources/papers/</guid><description>&lt;h1 id="research-papers">
+ Research Papers
+ &lt;a class="anchor" href="#research-papers">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="quantum-computing">
+ Quantum Computing
+ &lt;a class="anchor" href="#quantum-computing">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="foundational-papers">
+ Foundational Papers
+ &lt;a class="anchor" href="#foundational-papers">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="quantum-algorithms">
+ Quantum Algorithms
+ &lt;a class="anchor" href="#quantum-algorithms">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="quantum-error-correction">
+ Quantum Error Correction
+ &lt;a class="anchor" href="#quantum-error-correction">#&lt;/a>
+&lt;/h3>
+&lt;h2 id="cryptography">
+ Cryptography
+ &lt;a class="anchor" href="#cryptography">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="classical-cryptography">
+ Classical Cryptography
+ &lt;a class="anchor" href="#classical-cryptography">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="quantum-cryptography">
+ Quantum Cryptography
+ &lt;a class="anchor" href="#quantum-cryptography">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="post-quantum-cryptography">
+ Post-Quantum Cryptography
+ &lt;a class="anchor" href="#post-quantum-cryptography">#&lt;/a>
+&lt;/h3>
+&lt;h2 id="zero-knowledge-proofs">
+ Zero-Knowledge Proofs
+ &lt;a class="anchor" href="#zero-knowledge-proofs">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="foundational-work">
+ Foundational Work
+ &lt;a class="anchor" href="#foundational-work">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="modern-developments">
+ Modern Developments
+ &lt;a class="anchor" href="#modern-developments">#&lt;/a>
+&lt;/h3>
+&lt;h2 id="artificial-intelligence-and-machine-learning">
+ Artificial Intelligence and Machine Learning
+ &lt;a class="anchor" href="#artificial-intelligence-and-machine-learning">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="quantum-machine-learning">
+ Quantum Machine Learning
+ &lt;a class="anchor" href="#quantum-machine-learning">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="ai-in-cryptography">
+ AI in Cryptography
+ &lt;a class="anchor" href="#ai-in-cryptography">#&lt;/a>
+&lt;/h3>
+&lt;h2 id="mathematics">
+ Mathematics
+ &lt;a class="anchor" href="#mathematics">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="group-theory-in-cryptography">
+ Group Theory in Cryptography
+ &lt;a class="anchor" href="#group-theory-in-cryptography">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="lattice-theory">
+ Lattice Theory
+ &lt;a class="anchor" href="#lattice-theory">#&lt;/a>
+&lt;/h3>
+&lt;h2 id="recent-developments-2020-2024">
+ Recent Developments (2020-2024)
+ &lt;a class="anchor" href="#recent-developments-2020-2024">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="quantum-supremacy">
+ Quantum Supremacy
+ &lt;a class="anchor" href="#quantum-supremacy">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="post-quantum-standardization">
+ Post-Quantum Standardization
+ &lt;a class="anchor" href="#post-quantum-standardization">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="zero-knowledge-applications">
+ Zero-Knowledge Applications
+ &lt;a class="anchor" href="#zero-knowledge-applications">#&lt;/a>
+&lt;/h3>
+&lt;dl>
+
+&lt;/dl></description></item><item><title>Video Courses</title><link>https://www.quantumcryptlab.org/learning-resources/video-courses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/learning-resources/video-courses/</guid><description>&lt;h1 id="video-courses">
+ Video Courses
+ &lt;a class="anchor" href="#video-courses">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="quantum-computing">
+ Quantum Computing
+ &lt;a class="anchor" href="#quantum-computing">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="university-courses">
+ University Courses
+ &lt;a class="anchor" href="#university-courses">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="online-platforms">
+ Online Platforms
+ &lt;a class="anchor" href="#online-platforms">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="youtube-channels">
+ YouTube Channels
+ &lt;a class="anchor" href="#youtube-channels">#&lt;/a>
+&lt;/h3>
+&lt;h4 id="en-français">
+ En français:
+ &lt;a class="anchor" href="#en-fran%c3%a7ais">#&lt;/a>
+&lt;/h4>
+&lt;p>&lt;a href="https://www.youtube.com/@quantum-math">learning-resources&lt;/a>&lt;/p>
+&lt;h2 id="cryptography">
+ Cryptography
+ &lt;a class="anchor" href="#cryptography">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="university-courses-1">
+ University Courses
+ &lt;a class="anchor" href="#university-courses-1">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="online-platforms-1">
+ Online Platforms
+ &lt;a class="anchor" href="#online-platforms-1">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="youtube-channels-1">
+ YouTube Channels
+ &lt;a class="anchor" href="#youtube-channels-1">#&lt;/a>
+&lt;/h3>
+&lt;h2 id="mathematics">
+ Mathematics
+ &lt;a class="anchor" href="#mathematics">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="linear-algebra">
+ Linear Algebra
+ &lt;a class="anchor" href="#linear-algebra">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="group-theory">
+ Group Theory
+ &lt;a class="anchor" href="#group-theory">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="boolean-algebra">
+ Boolean Algebra
+ &lt;a class="anchor" href="#boolean-algebra">#&lt;/a>
+&lt;/h3>
+&lt;h2 id="artificial-intelligence-and-machine-learning">
+ Artificial Intelligence and Machine Learning
+ &lt;a class="anchor" href="#artificial-intelligence-and-machine-learning">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="machine-learning">
+ Machine Learning
+ &lt;a class="anchor" href="#machine-learning">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="deep-learning">
+ Deep Learning
+ &lt;a class="anchor" href="#deep-learning">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="ai-in-security">
+ AI in Security
+ &lt;a class="anchor" href="#ai-in-security">#&lt;/a>
+&lt;/h3>
+&lt;h2 id="zero-knowledge-proofs-and-blockchain">
+ Zero-Knowledge Proofs and Blockchain
+ &lt;a class="anchor" href="#zero-knowledge-proofs-and-blockchain">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="zero-knowledge-proofs">
+ Zero-Knowledge Proofs
+ &lt;a class="anchor" href="#zero-knowledge-proofs">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="blockchain-and-cryptocurrencies">
+ Blockchain and Cryptocurrencies
+ &lt;a class="anchor" href="#blockchain-and-cryptocurrencies">#&lt;/a>
+&lt;/h3>
+&lt;h2 id="specialized-topics">
+ Specialized Topics
+ &lt;a class="anchor" href="#specialized-topics">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="quantum-cryptography">
+ Quantum Cryptography
+ &lt;a class="anchor" href="#quantum-cryptography">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="post-quantum-cryptography">
+ Post-Quantum Cryptography
+ &lt;a class="anchor" href="#post-quantum-cryptography">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="quantum-machine-learning">
+ Quantum Machine Learning
+ &lt;a class="anchor" href="#quantum-machine-learning">#&lt;/a>
+&lt;/h3>
+&lt;h2 id="conference-talks-and-research-presentations">
+ Conference Talks and Research Presentations
+ &lt;a class="anchor" href="#conference-talks-and-research-presentations">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="major-conferences">
+ Major Conferences
+ &lt;a class="anchor" href="#major-conferences">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="industry-talks">
+ Industry Talks
+ &lt;a class="anchor" href="#industry-talks">#&lt;/a>
+&lt;/h3>
+&lt;h2 id="interactive-learning-platforms">
+ Interactive Learning Platforms
+ &lt;a class="anchor" href="#interactive-learning-platforms">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="hands-on-practice">
+ Hands-on Practice
+ &lt;a class="anchor" href="#hands-on-practice">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="research-seminars">
+ Research Seminars
+ &lt;a class="anchor" href="#research-seminars">#&lt;/a>
+&lt;/h3>
+&lt;dl>
+
+&lt;/dl></description></item></channel></rss>
