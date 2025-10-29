@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Quantum Physics on Quantum Crypt Lab</title><link>https://www.quantumcryptlab.org/quantum-physics/</link><description>Recent content in Quantum Physics on Quantum Crypt Lab</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.quantumcryptlab.org/quantum-physics/index.xml" rel="self" type="application/rss+xml"/><item><title>Photon Polarization</title><link>https://www.quantumcryptlab.org/quantum-physics/photon-polarization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/quantum-physics/photon-polarization/</guid><description/></item><item><title>Quantum Entanglement</title><link>https://www.quantumcryptlab.org/quantum-physics/quantum-entanglement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/quantum-physics/quantum-entanglement/</guid><description>&lt;h1 id="quantum-entanglement"&gt;
+ Quantum Entanglement
+ &lt;a class="anchor" href="#quantum-entanglement"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Quantum entanglement is a fascinating phenomenon where two or more particles become correlated in such a way that the quantum state of each particle cannot be described independently, even when separated by large distances.&lt;/p&gt;
+&lt;h2 id="mathematical-description"&gt;
+ Mathematical Description
+ &lt;a class="anchor" href="#mathematical-description"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The simplest example of an entangled state is the Bell state, also known as an EPR pair. For two qubits, one of the Bell states can be written as:&lt;/p&gt;</description></item><item><title>Quantum Superposition</title><link>https://www.quantumcryptlab.org/quantum-physics/quantum-superposition/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/quantum-physics/quantum-superposition/</guid><description>&lt;h1 id="quantum-superposition"&gt;
+ Quantum Superposition
+ &lt;a class="anchor" href="#quantum-superposition"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Quantum superposition is one of the fundamental principles of quantum mechanics. It states that a quantum system can exist in multiple states simultaneously until it is measured.&lt;/p&gt;
+&lt;h2 id="mathematical-description"&gt;
+ Mathematical Description
+ &lt;a class="anchor" href="#mathematical-description"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In quantum mechanics, we can describe a quantum state |ψ⟩ as a superposition of basis states. For example, a qubit can be written as:&lt;/p&gt;
+
+&lt;link rel="stylesheet" href="https://www.quantumcryptlab.org/katex/katex.min.css" /&gt;
+&lt;script defer src="https://www.quantumcryptlab.org/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://www.quantumcryptlab.org/katex/auto-render.min.js" onload="renderMathInElement(document.body);"&gt;&lt;/script&gt;&lt;span&gt;
+ \[
+|\psi\rangle = \alpha|0\rangle + \beta|1\rangle
+\]
+&lt;/span&gt;
+
+&lt;p&gt;where α and β are complex numbers satisfying:&lt;/p&gt;</description></item></channel></rss>

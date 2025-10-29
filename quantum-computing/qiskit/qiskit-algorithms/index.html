@@ -1,0 +1,367 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+  Introduction to Quantum Algorithms
+  #
+
+Quantum algorithms leverage quantum mechanical phenomena like superposition and entanglement to solve problems more efficiently than classical algorithms. In this section, we&rsquo;ll implement several fundamental quantum algorithms using Qiskit.
+
+  Deutsch-Jozsa Algorithm
+  #
+
+The Deutsch-Jozsa algorithm determines whether a function is constant or balanced with just one query, whereas a classical algorithm would need multiple queries.
+from qiskit import QuantumCircuit
+from qiskit_aer import AerSimulator
+
+def deutsch_jozsa(oracle_type='balanced'):
+    &#34;&#34;&#34;
+    Implements the Deutsch-Jozsa algorithm
+    oracle_type: 'constant' or 'balanced'
+    &#34;&#34;&#34;
+    # Create circuit with n qubits + 1 ancilla
+    n = 3  # number of input qubits
+    qc = QuantumCircuit(n + 1, n)
+    
+    # Initialize ancilla qubit to |1⟩
+    qc.x(n)
+    
+    # Apply Hadamard gates to all qubits
+    qc.h(range(n + 1))
+    qc.barrier()
+    
+    # Apply oracle
+    if oracle_type == 'constant':
+        # Constant oracle (do nothing or flip all)
+        pass  # Identity operation
+    else:
+        # Balanced oracle example
+        for i in range(n):
+            qc.cx(i, n)
+    
+    qc.barrier()
+    
+    # Apply Hadamard gates to input qubits
+    qc.h(range(n))
+    
+    # Measure
+    qc.measure(range(n), range(n))
+    
+    return qc
+
+# Run the algorithm
+qc = deutsch_jozsa('balanced')
+simulator = AerSimulator()
+job = simulator.run(qc, shots=1024)
+result = job.result()
+counts = result.get_counts()
+
+print(&#34;Deutsch-Jozsa results:&#34;, counts)
+# If all 0s: function is constant
+# Otherwise: function is balanced
+
+  Bernstein-Vazirani Algorithm
+  #
+
+This algorithm finds a hidden binary string with a single query, compared to n queries classically."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-algorithms/"><meta property="og:site_name" content="Quantum Crypt Lab"><meta property="og:title" content="Quantum Algorithms with Qiskit"><meta property="og:description" content="Introduction to Quantum Algorithms # Quantum algorithms leverage quantum mechanical phenomena like superposition and entanglement to solve problems more efficiently than classical algorithms. In this section, we’ll implement several fundamental quantum algorithms using Qiskit.
+Deutsch-Jozsa Algorithm # The Deutsch-Jozsa algorithm determines whether a function is constant or balanced with just one query, whereas a classical algorithm would need multiple queries.
+from qiskit import QuantumCircuit from qiskit_aer import AerSimulator def deutsch_jozsa(oracle_type='balanced'): &#34;&#34;&#34; Implements the Deutsch-Jozsa algorithm oracle_type: 'constant' or 'balanced' &#34;&#34;&#34; # Create circuit with n qubits + 1 ancilla n = 3 # number of input qubits qc = QuantumCircuit(n + 1, n) # Initialize ancilla qubit to |1⟩ qc.x(n) # Apply Hadamard gates to all qubits qc.h(range(n + 1)) qc.barrier() # Apply oracle if oracle_type == 'constant': # Constant oracle (do nothing or flip all) pass # Identity operation else: # Balanced oracle example for i in range(n): qc.cx(i, n) qc.barrier() # Apply Hadamard gates to input qubits qc.h(range(n)) # Measure qc.measure(range(n), range(n)) return qc # Run the algorithm qc = deutsch_jozsa('balanced') simulator = AerSimulator() job = simulator.run(qc, shots=1024) result = job.result() counts = result.get_counts() print(&#34;Deutsch-Jozsa results:&#34;, counts) # If all 0s: function is constant # Otherwise: function is balanced Bernstein-Vazirani Algorithm # This algorithm finds a hidden binary string with a single query, compared to n queries classically."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="quantum-computing"><title>Quantum Algorithms with Qiskit | Quantum Crypt Lab</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-algorithms/><link rel=stylesheet href=/book.min.f4bc2b0f80cbd784c51fa6123079c0ec4d90946148cb1cc5e0279ca61d81a19d.css integrity="sha256-9LwrD4DL14TFH6YSMHnA7E2QlGFIyxzF4Cecph2BoZ0=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.0622bfed81787ede4cbbddffa8b3ba2fdb060e440d98bee2f4e22e824c8c2bf9.js integrity="sha256-BiK/7YF4ft5Mu93/qLO6L9sGDkQNmL7i9OIugkyMK/k=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>Quantum Crypt Lab</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/learning-resources/>Learning Resources</a><ul><li><a href=/learning-resources/books/>Books</a></li><li><a href=/learning-resources/papers/>Research Papers</a></li><li><a href=/learning-resources/video-courses/>Video Courses</a></li></ul></li><li><span>Quantum Computing</span><ul><li><a href=/quantum-computing/introduction-quantum-computing/>Introduction to Quantum Computing</a></li><li><a href=/quantum-computing/qiskit/>Qiskit</a><ul><li><a href=/quantum-computing/qiskit/qiskit-introduction/>Introduction to Qiskit</a></li><li><a href=/quantum-computing/qiskit/qiskit-installation/>Installation and Setup</a></li><li><a href=/quantum-computing/qiskit/qiskit-basic-circuits/>Basic Quantum Circuits</a></li><li><a href=/quantum-computing/qiskit/qiskit-algorithms/ class=active>Quantum Algorithms with Qiskit</a></li><li><a href=/quantum-computing/qiskit/qiskit-advanced/>Advanced Qiskit Topics</a></li></ul></li></ul></li><li><a href=/about/>test</a></li><li><a href=/quantum-physics/>Quantum Physics</a><ul><li><a href=/quantum-physics/quantum-entanglement/>Quantum Entanglement</a></li><li><a href=/quantum-physics/quantum-superposition/>Quantum Superposition</a></li></ul></li><li><a href=/cryptography/>Cryptography</a><ul><li><a href=/cryptography/zero-knowledge-proof/>Zero-Knowledge Proofs</a><ul><li><a href=/cryptography/zero-knowledge-proof/schnorrs-identification-protocol/>Schnorr's Identification Protocol</a><ul></ul></li></ul></li></ul></li><li><a href=/mathematics/>Mathematics</a><ul><li><a href=/mathematics/boolean-algebra/>Boolean Algebra</a><ul></ul></li><li><a href=/mathematics/group-theory/>Group Theory</a><ul></ul></li></ul></li><li><a href=/research/>Research</a><ul></ul></li><li><a href=/ai/>Artificial Intelligence</a><ul><li><a href=/ai/ai-in-crypto/>AI in crypto</a><ul></ul></li><li><a href=/ai/ai-security/>AI Security</a><ul><li><a href=/ai/ai-security/homomorphic-encryption/>homomorphic encryption</a></li></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>Quantum Algorithms with Qiskit</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#introduction-to-quantum-algorithms>Introduction to Quantum Algorithms</a></li><li><a href=#deutsch-jozsa-algorithm>Deutsch-Jozsa Algorithm</a></li><li><a href=#bernstein-vazirani-algorithm>Bernstein-Vazirani Algorithm</a></li><li><a href=#grovers-algorithm>Grover&rsquo;s Algorithm</a></li><li><a href=#quantum-fourier-transform-qft>Quantum Fourier Transform (QFT)</a></li><li><a href=#inverse-qft>Inverse QFT</a></li><li><a href=#quantum-phase-estimation>Quantum Phase Estimation</a></li><li><a href=#variational-quantum-eigensolver-vqe>Variational Quantum Eigensolver (VQE)</a></li><li><a href=#quantum-approximate-optimization-algorithm-qaoa>Quantum Approximate Optimization Algorithm (QAOA)</a></li><li><a href=#using-qiskits-algorithm-library>Using Qiskit&rsquo;s Algorithm Library</a></li><li><a href=#practice-exercises>Practice Exercises</a></li><li><a href=#next-steps>Next Steps</a></li></ul></nav></aside></header><article class="markdown book-article"><h2 id=introduction-to-quantum-algorithms>Introduction to Quantum Algorithms
+<a class=anchor href=#introduction-to-quantum-algorithms>#</a></h2><p>Quantum algorithms leverage quantum mechanical phenomena like superposition and entanglement to solve problems more efficiently than classical algorithms. In this section, we&rsquo;ll implement several fundamental quantum algorithms using Qiskit.</p><h2 id=deutsch-jozsa-algorithm>Deutsch-Jozsa Algorithm
+<a class=anchor href=#deutsch-jozsa-algorithm>#</a></h2><p>The Deutsch-Jozsa algorithm determines whether a function is constant or balanced with just one query, whereas a classical algorithm would need multiple queries.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit <span style=color:#f92672>import</span> QuantumCircuit
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit_aer <span style=color:#f92672>import</span> AerSimulator
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>deutsch_jozsa</span>(oracle_type<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;balanced&#39;</span>):
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    Implements the Deutsch-Jozsa algorithm
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    oracle_type: &#39;constant&#39; or &#39;balanced&#39;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Create circuit with n qubits + 1 ancilla</span>
+</span></span><span style=display:flex><span>    n <span style=color:#f92672>=</span> <span style=color:#ae81ff>3</span>  <span style=color:#75715e># number of input qubits</span>
+</span></span><span style=display:flex><span>    qc <span style=color:#f92672>=</span> QuantumCircuit(n <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, n)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Initialize ancilla qubit to |1⟩</span>
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>x(n)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Apply Hadamard gates to all qubits</span>
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>h(range(n <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>))
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>barrier()
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Apply oracle</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> oracle_type <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;constant&#39;</span>:
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Constant oracle (do nothing or flip all)</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>pass</span>  <span style=color:#75715e># Identity operation</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Balanced oracle example</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(n):
+</span></span><span style=display:flex><span>            qc<span style=color:#f92672>.</span>cx(i, n)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>barrier()
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Apply Hadamard gates to input qubits</span>
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>h(range(n))
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Measure</span>
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>measure(range(n), range(n))
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> qc
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Run the algorithm</span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> deutsch_jozsa(<span style=color:#e6db74>&#39;balanced&#39;</span>)
+</span></span><span style=display:flex><span>simulator <span style=color:#f92672>=</span> AerSimulator()
+</span></span><span style=display:flex><span>job <span style=color:#f92672>=</span> simulator<span style=color:#f92672>.</span>run(qc, shots<span style=color:#f92672>=</span><span style=color:#ae81ff>1024</span>)
+</span></span><span style=display:flex><span>result <span style=color:#f92672>=</span> job<span style=color:#f92672>.</span>result()
+</span></span><span style=display:flex><span>counts <span style=color:#f92672>=</span> result<span style=color:#f92672>.</span>get_counts()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Deutsch-Jozsa results:&#34;</span>, counts)
+</span></span><span style=display:flex><span><span style=color:#75715e># If all 0s: function is constant</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Otherwise: function is balanced</span>
+</span></span></code></pre></div><h2 id=bernstein-vazirani-algorithm>Bernstein-Vazirani Algorithm
+<a class=anchor href=#bernstein-vazirani-algorithm>#</a></h2><p>This algorithm finds a hidden binary string with a single query, compared to n queries classically.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>bernstein_vazirani</span>(hidden_string<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;101&#39;</span>):
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    Finds the hidden string in one query
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    hidden_string: binary string to find
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    n <span style=color:#f92672>=</span> len(hidden_string)
+</span></span><span style=display:flex><span>    qc <span style=color:#f92672>=</span> QuantumCircuit(n <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, n)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Initialize ancilla to |1⟩</span>
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>x(n)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Apply Hadamard gates</span>
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>h(range(n <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>))
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>barrier()
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Apply oracle based on hidden string</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i, bit <span style=color:#f92672>in</span> enumerate(reversed(hidden_string)):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> bit <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;1&#39;</span>:
+</span></span><span style=display:flex><span>            qc<span style=color:#f92672>.</span>cx(i, n)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>barrier()
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Apply Hadamard gates to input qubits</span>
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>h(range(n))
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Measure</span>
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>measure(range(n), range(n))
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> qc
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Example usage</span>
+</span></span><span style=display:flex><span>hidden <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;101&#39;</span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> bernstein_vazirani(hidden)
+</span></span><span style=display:flex><span>simulator <span style=color:#f92672>=</span> AerSimulator()
+</span></span><span style=display:flex><span>job <span style=color:#f92672>=</span> simulator<span style=color:#f92672>.</span>run(qc, shots<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>result <span style=color:#f92672>=</span> job<span style=color:#f92672>.</span>result()
+</span></span><span style=display:flex><span>counts <span style=color:#f92672>=</span> result<span style=color:#f92672>.</span>get_counts()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Hidden string found: </span><span style=color:#e6db74>{</span>list(counts<span style=color:#f92672>.</span>keys())[<span style=color:#ae81ff>0</span>]<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span></code></pre></div><h2 id=grovers-algorithm>Grover&rsquo;s Algorithm
+<a class=anchor href=#grovers-algorithm>#</a></h2><p>Grover&rsquo;s algorithm searches an unsorted database of N items in O(√N) time, providing quadratic speedup over classical search.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> math
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.circuit.library <span style=color:#f92672>import</span> GroverOperator
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit <span style=color:#f92672>import</span> QuantumCircuit
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>grover_search</span>(marked_states, num_qubits<span style=color:#f92672>=</span><span style=color:#ae81ff>3</span>):
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    Implements Grover&#39;s search algorithm
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    marked_states: list of marked states (e.g., [&#39;101&#39;, &#39;110&#39;])
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    num_qubits: number of qubits
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Create oracle</span>
+</span></span><span style=display:flex><span>    oracle <span style=color:#f92672>=</span> QuantumCircuit(num_qubits)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> target <span style=color:#f92672>in</span> marked_states:
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Flip phase of target state</span>
+</span></span><span style=display:flex><span>        rev_target <span style=color:#f92672>=</span> target[::<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Apply X gates to qubits that should be 0</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i, bit <span style=color:#f92672>in</span> enumerate(rev_target):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> bit <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;0&#39;</span>:
+</span></span><span style=display:flex><span>                oracle<span style=color:#f92672>.</span>x(i)
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Multi-controlled Z gate</span>
+</span></span><span style=display:flex><span>        oracle<span style=color:#f92672>.</span>h(num_qubits <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>        oracle<span style=color:#f92672>.</span>mcx(list(range(num_qubits <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)), num_qubits <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>        oracle<span style=color:#f92672>.</span>h(num_qubits <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Undo X gates</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i, bit <span style=color:#f92672>in</span> enumerate(rev_target):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> bit <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;0&#39;</span>:
+</span></span><span style=display:flex><span>                oracle<span style=color:#f92672>.</span>x(i)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Create full Grover circuit</span>
+</span></span><span style=display:flex><span>    qc <span style=color:#f92672>=</span> QuantumCircuit(num_qubits, num_qubits)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Initialize to equal superposition</span>
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>h(range(num_qubits))
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Calculate optimal number of iterations</span>
+</span></span><span style=display:flex><span>    num_solutions <span style=color:#f92672>=</span> len(marked_states)
+</span></span><span style=display:flex><span>    total_states <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span><span style=color:#f92672>**</span>num_qubits
+</span></span><span style=display:flex><span>    iterations <span style=color:#f92672>=</span> int(math<span style=color:#f92672>.</span>pi<span style=color:#f92672>/</span><span style=color:#ae81ff>4</span> <span style=color:#f92672>*</span> math<span style=color:#f92672>.</span>sqrt(total_states<span style=color:#f92672>/</span>num_solutions))
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Apply Grover iterations</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(iterations):
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Apply oracle</span>
+</span></span><span style=display:flex><span>        qc<span style=color:#f92672>.</span>compose(oracle, inplace<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Apply diffusion operator</span>
+</span></span><span style=display:flex><span>        qc<span style=color:#f92672>.</span>h(range(num_qubits))
+</span></span><span style=display:flex><span>        qc<span style=color:#f92672>.</span>x(range(num_qubits))
+</span></span><span style=display:flex><span>        qc<span style=color:#f92672>.</span>h(num_qubits <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>        qc<span style=color:#f92672>.</span>mcx(list(range(num_qubits <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)), num_qubits <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>        qc<span style=color:#f92672>.</span>h(num_qubits <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>        qc<span style=color:#f92672>.</span>x(range(num_qubits))
+</span></span><span style=display:flex><span>        qc<span style=color:#f92672>.</span>h(range(num_qubits))
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>measure_all()
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> qc
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Example: Search for &#39;101&#39; in 3-qubit space</span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> grover_search([<span style=color:#e6db74>&#39;101&#39;</span>], num_qubits<span style=color:#f92672>=</span><span style=color:#ae81ff>3</span>)
+</span></span><span style=display:flex><span>simulator <span style=color:#f92672>=</span> AerSimulator()
+</span></span><span style=display:flex><span>job <span style=color:#f92672>=</span> simulator<span style=color:#f92672>.</span>run(qc, shots<span style=color:#f92672>=</span><span style=color:#ae81ff>1024</span>)
+</span></span><span style=display:flex><span>result <span style=color:#f92672>=</span> job<span style=color:#f92672>.</span>result()
+</span></span><span style=display:flex><span>counts <span style=color:#f92672>=</span> result<span style=color:#f92672>.</span>get_counts()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.visualization <span style=color:#f92672>import</span> plot_histogram
+</span></span><span style=display:flex><span>plot_histogram(counts)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Grover&#39;s search results:&#34;</span>, counts)
+</span></span></code></pre></div><h2 id=quantum-fourier-transform-qft>Quantum Fourier Transform (QFT)
+<a class=anchor href=#quantum-fourier-transform-qft>#</a></h2><p>The Quantum Fourier Transform is a key component in many quantum algorithms, including Shor&rsquo;s algorithm.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>qft</span>(n):
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    Creates a QFT circuit for n qubits
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    qc <span style=color:#f92672>=</span> QuantumCircuit(n)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(n):
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Apply Hadamard gate</span>
+</span></span><span style=display:flex><span>        qc<span style=color:#f92672>.</span>h(j)
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Apply controlled phase rotations</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> k <span style=color:#f92672>in</span> range(j <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, n):
+</span></span><span style=display:flex><span>            qc<span style=color:#f92672>.</span>cp(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> np<span style=color:#f92672>.</span>pi <span style=color:#f92672>/</span> (<span style=color:#ae81ff>2</span><span style=color:#f92672>**</span>(k <span style=color:#f92672>-</span> j <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)), k, j)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Swap qubits to reverse order</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(n <span style=color:#f92672>//</span> <span style=color:#ae81ff>2</span>):
+</span></span><span style=display:flex><span>        qc<span style=color:#f92672>.</span>swap(i, n <span style=color:#f92672>-</span> i <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> qc
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create QFT circuit</span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> qft(<span style=color:#ae81ff>4</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>draw(<span style=color:#e6db74>&#39;mpl&#39;</span>)
+</span></span></code></pre></div><h2 id=inverse-qft>Inverse QFT
+<a class=anchor href=#inverse-qft>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>inverse_qft</span>(n):
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    Creates an inverse QFT circuit
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    qc <span style=color:#f92672>=</span> qft(n)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> qc<span style=color:#f92672>.</span>inverse()
+</span></span></code></pre></div><h2 id=quantum-phase-estimation>Quantum Phase Estimation
+<a class=anchor href=#quantum-phase-estimation>#</a></h2><p>Estimates the phase (eigenvalue) of a unitary operator.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>quantum_phase_estimation</span>(unitary, precision_qubits<span style=color:#f92672>=</span><span style=color:#ae81ff>3</span>):
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    Performs quantum phase estimation
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    unitary: the unitary gate to estimate phase of
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    precision_qubits: number of qubits for precision
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Total qubits = precision + eigenstate qubits</span>
+</span></span><span style=display:flex><span>    num_qubits <span style=color:#f92672>=</span> precision_qubits <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    qc <span style=color:#f92672>=</span> QuantumCircuit(num_qubits, precision_qubits)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Initialize eigenstate (last qubit)</span>
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>x(precision_qubits)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Apply Hadamard to precision qubits</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(precision_qubits):
+</span></span><span style=display:flex><span>        qc<span style=color:#f92672>.</span>h(i)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Controlled unitary operations</span>
+</span></span><span style=display:flex><span>    repetitions <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> counting_qubit <span style=color:#f92672>in</span> range(precision_qubits):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(repetitions):
+</span></span><span style=display:flex><span>            <span style=color:#75715e># Apply controlled unitary</span>
+</span></span><span style=display:flex><span>            qc<span style=color:#f92672>.</span>cp(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> np<span style=color:#f92672>.</span>pi <span style=color:#f92672>/</span> <span style=color:#ae81ff>4</span>, counting_qubit, precision_qubits)
+</span></span><span style=display:flex><span>        repetitions <span style=color:#f92672>*=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Apply inverse QFT</span>
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>append(inverse_qft(precision_qubits), range(precision_qubits))
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Measure precision qubits</span>
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>measure(range(precision_qubits), range(precision_qubits))
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> qc
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Example usage</span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> quantum_phase_estimation(<span style=color:#66d9ef>None</span>, precision_qubits<span style=color:#f92672>=</span><span style=color:#ae81ff>4</span>)
+</span></span></code></pre></div><h2 id=variational-quantum-eigensolver-vqe>Variational Quantum Eigensolver (VQE)
+<a class=anchor href=#variational-quantum-eigensolver-vqe>#</a></h2><p>VQE is a hybrid quantum-classical algorithm for finding ground state energies.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.circuit <span style=color:#f92672>import</span> Parameter
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.primitives <span style=color:#f92672>import</span> Estimator
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> scipy.optimize <span style=color:#f92672>import</span> minimize
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>create_ansatz</span>(num_qubits):
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    Creates a parameterized ansatz circuit
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    qc <span style=color:#f92672>=</span> QuantumCircuit(num_qubits)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Parameters</span>
+</span></span><span style=display:flex><span>    params <span style=color:#f92672>=</span> [Parameter(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;θ</span><span style=color:#e6db74>{</span>i<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>) <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(num_qubits <span style=color:#f92672>*</span> <span style=color:#ae81ff>2</span>)]
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Layer 1: Rotation gates</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(num_qubits):
+</span></span><span style=display:flex><span>        qc<span style=color:#f92672>.</span>ry(params[i], i)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Entangling layer</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(num_qubits <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>        qc<span style=color:#f92672>.</span>cx(i, i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Layer 2: More rotations</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(num_qubits):
+</span></span><span style=display:flex><span>        qc<span style=color:#f92672>.</span>ry(params[num_qubits <span style=color:#f92672>+</span> i], i)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> qc, params
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create ansatz</span>
+</span></span><span style=display:flex><span>ansatz, params <span style=color:#f92672>=</span> create_ansatz(<span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>print(ansatz)
+</span></span></code></pre></div><h2 id=quantum-approximate-optimization-algorithm-qaoa>Quantum Approximate Optimization Algorithm (QAOA)
+<a class=anchor href=#quantum-approximate-optimization-algorithm-qaoa>#</a></h2><p>QAOA solves combinatorial optimization problems.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>qaoa_circuit</span>(num_qubits, beta, gamma):
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    Creates a QAOA circuit
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    beta: mixer parameter
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    gamma: cost parameter
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    qc <span style=color:#f92672>=</span> QuantumCircuit(num_qubits)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Initial state: equal superposition</span>
+</span></span><span style=display:flex><span>    qc<span style=color:#f92672>.</span>h(range(num_qubits))
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Problem-specific cost Hamiltonian (example: MaxCut)</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Apply ZZ interactions</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(num_qubits <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>        qc<span style=color:#f92672>.</span>rzz(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> gamma, i, i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Mixer Hamiltonian</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(num_qubits):
+</span></span><span style=display:flex><span>        qc<span style=color:#f92672>.</span>rx(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> beta, i)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> qc
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Example QAOA circuit</span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> qaoa_circuit(<span style=color:#ae81ff>4</span>, beta<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>, gamma<span style=color:#f92672>=</span><span style=color:#ae81ff>1.0</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>draw(<span style=color:#e6db74>&#39;mpl&#39;</span>)
+</span></span></code></pre></div><h2 id=using-qiskits-algorithm-library>Using Qiskit&rsquo;s Algorithm Library
+<a class=anchor href=#using-qiskits-algorithm-library>#</a></h2><p>Qiskit provides pre-built implementations of many algorithms:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.algorithms <span style=color:#f92672>import</span> VQE, QAOA
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.algorithms.optimizers <span style=color:#f92672>import</span> SLSQP, COBYLA
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.circuit.library <span style=color:#f92672>import</span> TwoLocal
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.primitives <span style=color:#f92672>import</span> Sampler
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Example: Using built-in VQE</span>
+</span></span><span style=display:flex><span>optimizer <span style=color:#f92672>=</span> SLSQP(maxiter<span style=color:#f92672>=</span><span style=color:#ae81ff>100</span>)
+</span></span><span style=display:flex><span>ansatz <span style=color:#f92672>=</span> TwoLocal(<span style=color:#ae81ff>2</span>, <span style=color:#e6db74>&#39;ry&#39;</span>, <span style=color:#e6db74>&#39;cz&#39;</span>, reps<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Note: This is a simplified example</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># In practice, you&#39;d also define a Hamiltonian</span>
+</span></span></code></pre></div><h2 id=practice-exercises>Practice Exercises
+<a class=anchor href=#practice-exercises>#</a></h2><p>Try implementing these yourself:</p><ol><li><strong>Simon&rsquo;s Algorithm</strong>: Find the hidden period of a function</li><li><strong>Shor&rsquo;s Algorithm</strong>: Factor a small number (e.g., 15)</li><li><strong>HHL Algorithm</strong>: Solve a 2x2 linear system</li><li><strong>Custom Oracle</strong>: Design your own oracle for Grover&rsquo;s algorithm</li></ol><h2 id=next-steps>Next Steps
+<a class=anchor href=#next-steps>#</a></h2><p>Now that you understand basic quantum algorithms:</p><ul><li>Explore quantum machine learning algorithms</li><li>Learn about error mitigation techniques</li><li>Optimize algorithms for real quantum hardware</li><li>Study quantum advantage and complexity theory</li></ul><p>In the next section, we&rsquo;ll cover advanced Qiskit features and real hardware execution!</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#introduction-to-quantum-algorithms>Introduction to Quantum Algorithms</a></li><li><a href=#deutsch-jozsa-algorithm>Deutsch-Jozsa Algorithm</a></li><li><a href=#bernstein-vazirani-algorithm>Bernstein-Vazirani Algorithm</a></li><li><a href=#grovers-algorithm>Grover&rsquo;s Algorithm</a></li><li><a href=#quantum-fourier-transform-qft>Quantum Fourier Transform (QFT)</a></li><li><a href=#inverse-qft>Inverse QFT</a></li><li><a href=#quantum-phase-estimation>Quantum Phase Estimation</a></li><li><a href=#variational-quantum-eigensolver-vqe>Variational Quantum Eigensolver (VQE)</a></li><li><a href=#quantum-approximate-optimization-algorithm-qaoa>Quantum Approximate Optimization Algorithm (QAOA)</a></li><li><a href=#using-qiskits-algorithm-library>Using Qiskit&rsquo;s Algorithm Library</a></li><li><a href=#practice-exercises>Practice Exercises</a></li><li><a href=#next-steps>Next Steps</a></li></ul></nav></div></aside></main></body></html>

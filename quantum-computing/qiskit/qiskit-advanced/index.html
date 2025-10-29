@@ -1,0 +1,431 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='
+  Running on Real Quantum Hardware
+  #
+
+
+  Connecting to IBM Quantum
+  #
+
+from qiskit_ibm_runtime import QiskitRuntimeService
+
+# Load your account
+service = QiskitRuntimeService(channel="ibm_quantum")
+
+# List available backends
+backends = service.backends()
+for backend in backends:
+    print(f"Backend: {backend.name}")
+    print(f"  Qubits: {backend.num_qubits}")
+    print(f"  Status: {backend.status().status_msg}\n")
+
+# Select a backend
+backend = service.backend("ibm_brisbane")  # Example backend name
+
+  Submitting Jobs to Real Hardware
+  #
+
+from qiskit import QuantumCircuit, transpile
+
+# Create your circuit
+qc = QuantumCircuit(2, 2)
+qc.h(0)
+qc.cx(0, 1)
+qc.measure([0, 1], [0, 1])
+
+# Transpile for the specific backend
+transpiled_qc = transpile(qc, backend=backend, optimization_level=3)
+
+# Submit job
+job = backend.run(transpiled_qc, shots=1024)
+
+# Monitor job status
+print(f"Job ID: {job.job_id()}")
+print(f"Job Status: {job.status()}")
+
+# Get results (this will wait for job completion)
+result = job.result()
+counts = result.get_counts()
+print("Results:", counts)
+
+  Using Qiskit Runtime
+  #
+
+from qiskit_ibm_runtime import Session, Sampler, Estimator
+
+# Create a session
+with Session(service=service, backend="ibm_brisbane") as session:
+    # Use Sampler for sampling circuits
+    sampler = Sampler(session=session)
+    job = sampler.run(qc, shots=1000)
+    result = job.result()
+    print(result)
+
+  Circuit Optimization and Transpilation
+  #
+
+
+  Understanding Transpilation
+  #
+
+Transpilation converts your quantum circuit to match the constraints of specific hardware.'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-advanced/"><meta property="og:site_name" content="Quantum Crypt Lab"><meta property="og:title" content="Advanced Qiskit Topics"><meta property="og:description" content='Running on Real Quantum Hardware # Connecting to IBM Quantum # from qiskit_ibm_runtime import QiskitRuntimeService # Load your account service = QiskitRuntimeService(channel="ibm_quantum") # List available backends backends = service.backends() for backend in backends: print(f"Backend: {backend.name}") print(f" Qubits: {backend.num_qubits}") print(f" Status: {backend.status().status_msg}\n") # Select a backend backend = service.backend("ibm_brisbane") # Example backend name Submitting Jobs to Real Hardware # from qiskit import QuantumCircuit, transpile # Create your circuit qc = QuantumCircuit(2, 2) qc.h(0) qc.cx(0, 1) qc.measure([0, 1], [0, 1]) # Transpile for the specific backend transpiled_qc = transpile(qc, backend=backend, optimization_level=3) # Submit job job = backend.run(transpiled_qc, shots=1024) # Monitor job status print(f"Job ID: {job.job_id()}") print(f"Job Status: {job.status()}") # Get results (this will wait for job completion) result = job.result() counts = result.get_counts() print("Results:", counts) Using Qiskit Runtime # from qiskit_ibm_runtime import Session, Sampler, Estimator # Create a session with Session(service=service, backend="ibm_brisbane") as session: # Use Sampler for sampling circuits sampler = Sampler(session=session) job = sampler.run(qc, shots=1000) result = job.result() print(result) Circuit Optimization and Transpilation # Understanding Transpilation # Transpilation converts your quantum circuit to match the constraints of specific hardware.'><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="quantum-computing"><title>Advanced Qiskit Topics | Quantum Crypt Lab</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-advanced/><link rel=stylesheet href=/book.min.f4bc2b0f80cbd784c51fa6123079c0ec4d90946148cb1cc5e0279ca61d81a19d.css integrity="sha256-9LwrD4DL14TFH6YSMHnA7E2QlGFIyxzF4Cecph2BoZ0=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.0622bfed81787ede4cbbddffa8b3ba2fdb060e440d98bee2f4e22e824c8c2bf9.js integrity="sha256-BiK/7YF4ft5Mu93/qLO6L9sGDkQNmL7i9OIugkyMK/k=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>Quantum Crypt Lab</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/learning-resources/>Learning Resources</a><ul><li><a href=/learning-resources/books/>Books</a></li><li><a href=/learning-resources/papers/>Research Papers</a></li><li><a href=/learning-resources/video-courses/>Video Courses</a></li></ul></li><li><span>Quantum Computing</span><ul><li><a href=/quantum-computing/introduction-quantum-computing/>Introduction to Quantum Computing</a></li><li><a href=/quantum-computing/qiskit/>Qiskit</a><ul><li><a href=/quantum-computing/qiskit/qiskit-introduction/>Introduction to Qiskit</a></li><li><a href=/quantum-computing/qiskit/qiskit-installation/>Installation and Setup</a></li><li><a href=/quantum-computing/qiskit/qiskit-basic-circuits/>Basic Quantum Circuits</a></li><li><a href=/quantum-computing/qiskit/qiskit-algorithms/>Quantum Algorithms with Qiskit</a></li><li><a href=/quantum-computing/qiskit/qiskit-advanced/ class=active>Advanced Qiskit Topics</a></li></ul></li></ul></li><li><a href=/about/>test</a></li><li><a href=/quantum-physics/>Quantum Physics</a><ul><li><a href=/quantum-physics/quantum-entanglement/>Quantum Entanglement</a></li><li><a href=/quantum-physics/quantum-superposition/>Quantum Superposition</a></li></ul></li><li><a href=/cryptography/>Cryptography</a><ul><li><a href=/cryptography/zero-knowledge-proof/>Zero-Knowledge Proofs</a><ul><li><a href=/cryptography/zero-knowledge-proof/schnorrs-identification-protocol/>Schnorr's Identification Protocol</a><ul></ul></li></ul></li></ul></li><li><a href=/mathematics/>Mathematics</a><ul><li><a href=/mathematics/boolean-algebra/>Boolean Algebra</a><ul></ul></li><li><a href=/mathematics/group-theory/>Group Theory</a><ul></ul></li></ul></li><li><a href=/research/>Research</a><ul></ul></li><li><a href=/ai/>Artificial Intelligence</a><ul><li><a href=/ai/ai-in-crypto/>AI in crypto</a><ul></ul></li><li><a href=/ai/ai-security/>AI Security</a><ul><li><a href=/ai/ai-security/homomorphic-encryption/>homomorphic encryption</a></li></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>Advanced Qiskit Topics</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#running-on-real-quantum-hardware>Running on Real Quantum Hardware</a><ul><li><a href=#connecting-to-ibm-quantum>Connecting to IBM Quantum</a></li><li><a href=#submitting-jobs-to-real-hardware>Submitting Jobs to Real Hardware</a></li><li><a href=#using-qiskit-runtime>Using Qiskit Runtime</a></li></ul></li><li><a href=#circuit-optimization-and-transpilation>Circuit Optimization and Transpilation</a><ul><li><a href=#understanding-transpilation>Understanding Transpilation</a></li><li><a href=#custom-pass-manager>Custom Pass Manager</a></li></ul></li><li><a href=#noise-simulation-and-mitigation>Noise Simulation and Mitigation</a><ul><li><a href=#creating-noise-models>Creating Noise Models</a></li><li><a href=#simulating-with-noise>Simulating with Noise</a></li><li><a href=#noise-mitigation>Noise Mitigation</a></li></ul></li><li><a href=#advanced-circuit-techniques>Advanced Circuit Techniques</a><ul><li><a href=#dynamic-circuits-mid-circuit-measurements>Dynamic Circuits (Mid-Circuit Measurements)</a></li><li><a href=#pulse-level-control>Pulse-Level Control</a></li></ul></li><li><a href=#circuit-synthesis-and-decomposition>Circuit Synthesis and Decomposition</a><ul><li><a href=#unitary-synthesis>Unitary Synthesis</a></li><li><a href=#two-qubit-gate-decomposition>Two-Qubit Gate Decomposition</a></li></ul></li><li><a href=#performance-optimization>Performance Optimization</a><ul><li><a href=#circuit-caching>Circuit Caching</a></li><li><a href=#batch-job-submission>Batch Job Submission</a></li></ul></li><li><a href=#quantum-state-and-process-tomography>Quantum State and Process Tomography</a><ul><li><a href=#state-tomography>State Tomography</a></li><li><a href=#process-tomography>Process Tomography</a></li></ul></li><li><a href=#debugging-and-profiling>Debugging and Profiling</a><ul><li><a href=#statevector-simulation>Statevector Simulation</a></li><li><a href=#unitary-simulation>Unitary Simulation</a></li><li><a href=#circuit-profiling>Circuit Profiling</a></li></ul></li><li><a href=#best-practices>Best Practices</a><ul><li><a href=#1-always-transpile-for-target-backend>1. Always Transpile for Target Backend</a></li><li><a href=#2-use-error-mitigation>2. Use Error Mitigation</a></li><li><a href=#3-minimize-circuit-depth>3. Minimize Circuit Depth</a></li><li><a href=#4-handle-job-failures-gracefully>4. Handle Job Failures Gracefully</a></li></ul></li><li><a href=#further-learning-resources>Further Learning Resources</a></li><li><a href=#conclusion>Conclusion</a></li></ul></nav></aside></header><article class="markdown book-article"><h2 id=running-on-real-quantum-hardware>Running on Real Quantum Hardware
+<a class=anchor href=#running-on-real-quantum-hardware>#</a></h2><h3 id=connecting-to-ibm-quantum>Connecting to IBM Quantum
+<a class=anchor href=#connecting-to-ibm-quantum>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit_ibm_runtime <span style=color:#f92672>import</span> QiskitRuntimeService
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Load your account</span>
+</span></span><span style=display:flex><span>service <span style=color:#f92672>=</span> QiskitRuntimeService(channel<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;ibm_quantum&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># List available backends</span>
+</span></span><span style=display:flex><span>backends <span style=color:#f92672>=</span> service<span style=color:#f92672>.</span>backends()
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> backend <span style=color:#f92672>in</span> backends:
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Backend: </span><span style=color:#e6db74>{</span>backend<span style=color:#f92672>.</span>name<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;  Qubits: </span><span style=color:#e6db74>{</span>backend<span style=color:#f92672>.</span>num_qubits<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;  Status: </span><span style=color:#e6db74>{</span>backend<span style=color:#f92672>.</span>status()<span style=color:#f92672>.</span>status_msg<span style=color:#e6db74>}</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Select a backend</span>
+</span></span><span style=display:flex><span>backend <span style=color:#f92672>=</span> service<span style=color:#f92672>.</span>backend(<span style=color:#e6db74>&#34;ibm_brisbane&#34;</span>)  <span style=color:#75715e># Example backend name</span>
+</span></span></code></pre></div><h3 id=submitting-jobs-to-real-hardware>Submitting Jobs to Real Hardware
+<a class=anchor href=#submitting-jobs-to-real-hardware>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit <span style=color:#f92672>import</span> QuantumCircuit, transpile
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create your circuit</span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>h(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>cx(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>measure([<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>], [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Transpile for the specific backend</span>
+</span></span><span style=display:flex><span>transpiled_qc <span style=color:#f92672>=</span> transpile(qc, backend<span style=color:#f92672>=</span>backend, optimization_level<span style=color:#f92672>=</span><span style=color:#ae81ff>3</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Submit job</span>
+</span></span><span style=display:flex><span>job <span style=color:#f92672>=</span> backend<span style=color:#f92672>.</span>run(transpiled_qc, shots<span style=color:#f92672>=</span><span style=color:#ae81ff>1024</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Monitor job status</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Job ID: </span><span style=color:#e6db74>{</span>job<span style=color:#f92672>.</span>job_id()<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Job Status: </span><span style=color:#e6db74>{</span>job<span style=color:#f92672>.</span>status()<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Get results (this will wait for job completion)</span>
+</span></span><span style=display:flex><span>result <span style=color:#f92672>=</span> job<span style=color:#f92672>.</span>result()
+</span></span><span style=display:flex><span>counts <span style=color:#f92672>=</span> result<span style=color:#f92672>.</span>get_counts()
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Results:&#34;</span>, counts)
+</span></span></code></pre></div><h3 id=using-qiskit-runtime>Using Qiskit Runtime
+<a class=anchor href=#using-qiskit-runtime>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit_ibm_runtime <span style=color:#f92672>import</span> Session, Sampler, Estimator
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create a session</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> Session(service<span style=color:#f92672>=</span>service, backend<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;ibm_brisbane&#34;</span>) <span style=color:#66d9ef>as</span> session:
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Use Sampler for sampling circuits</span>
+</span></span><span style=display:flex><span>    sampler <span style=color:#f92672>=</span> Sampler(session<span style=color:#f92672>=</span>session)
+</span></span><span style=display:flex><span>    job <span style=color:#f92672>=</span> sampler<span style=color:#f92672>.</span>run(qc, shots<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>)
+</span></span><span style=display:flex><span>    result <span style=color:#f92672>=</span> job<span style=color:#f92672>.</span>result()
+</span></span><span style=display:flex><span>    print(result)
+</span></span></code></pre></div><h2 id=circuit-optimization-and-transpilation>Circuit Optimization and Transpilation
+<a class=anchor href=#circuit-optimization-and-transpilation>#</a></h2><h3 id=understanding-transpilation>Understanding Transpilation
+<a class=anchor href=#understanding-transpilation>#</a></h3><p>Transpilation converts your quantum circuit to match the constraints of specific hardware.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit <span style=color:#f92672>import</span> transpile
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.transpiler <span style=color:#f92672>import</span> CouplingMap, Layout
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create a circuit</span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>3</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>h(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>cx(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>cx(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Basic transpilation</span>
+</span></span><span style=display:flex><span>transpiled <span style=color:#f92672>=</span> transpile(qc, backend<span style=color:#f92672>=</span>backend)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Custom transpilation with optimization levels</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Level 0: Just mapping, no optimization</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Level 1: Light optimization</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Level 2: Medium optimization</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Level 3: Heavy optimization</span>
+</span></span><span style=display:flex><span>transpiled <span style=color:#f92672>=</span> transpile(
+</span></span><span style=display:flex><span>    qc,
+</span></span><span style=display:flex><span>    backend<span style=color:#f92672>=</span>backend,
+</span></span><span style=display:flex><span>    optimization_level<span style=color:#f92672>=</span><span style=color:#ae81ff>3</span>,
+</span></span><span style=display:flex><span>    seed_transpiler<span style=color:#f92672>=</span><span style=color:#ae81ff>42</span>  <span style=color:#75715e># For reproducibility</span>
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Original depth: </span><span style=color:#e6db74>{</span>qc<span style=color:#f92672>.</span>depth()<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Transpiled depth: </span><span style=color:#e6db74>{</span>transpiled<span style=color:#f92672>.</span>depth()<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span></code></pre></div><h3 id=custom-pass-manager>Custom Pass Manager
+<a class=anchor href=#custom-pass-manager>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.transpiler <span style=color:#f92672>import</span> PassManager
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.transpiler.passes <span style=color:#f92672>import</span> (
+</span></span><span style=display:flex><span>    Unroller,
+</span></span><span style=display:flex><span>    Optimize1qGates,
+</span></span><span style=display:flex><span>    CXCancellation,
+</span></span><span style=display:flex><span>    CommutativeCancellation
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create custom pass manager</span>
+</span></span><span style=display:flex><span>pm <span style=color:#f92672>=</span> PassManager()
+</span></span><span style=display:flex><span>pm<span style=color:#f92672>.</span>append(Unroller([<span style=color:#e6db74>&#39;u&#39;</span>, <span style=color:#e6db74>&#39;cx&#39;</span>]))
+</span></span><span style=display:flex><span>pm<span style=color:#f92672>.</span>append(Optimize1qGates())
+</span></span><span style=display:flex><span>pm<span style=color:#f92672>.</span>append(CXCancellation())
+</span></span><span style=display:flex><span>pm<span style=color:#f92672>.</span>append(CommutativeCancellation())
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Apply passes</span>
+</span></span><span style=display:flex><span>optimized_qc <span style=color:#f92672>=</span> pm<span style=color:#f92672>.</span>run(qc)
+</span></span></code></pre></div><h2 id=noise-simulation-and-mitigation>Noise Simulation and Mitigation
+<a class=anchor href=#noise-simulation-and-mitigation>#</a></h2><h3 id=creating-noise-models>Creating Noise Models
+<a class=anchor href=#creating-noise-models>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit_aer.noise <span style=color:#f92672>import</span> (
+</span></span><span style=display:flex><span>    NoiseModel,
+</span></span><span style=display:flex><span>    depolarizing_error,
+</span></span><span style=display:flex><span>    thermal_relaxation_error
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create a noise model</span>
+</span></span><span style=display:flex><span>noise_model <span style=color:#f92672>=</span> NoiseModel()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Add depolarizing error</span>
+</span></span><span style=display:flex><span>error_1q <span style=color:#f92672>=</span> depolarizing_error(<span style=color:#ae81ff>0.001</span>, <span style=color:#ae81ff>1</span>)  <span style=color:#75715e># 1-qubit error</span>
+</span></span><span style=display:flex><span>error_2q <span style=color:#f92672>=</span> depolarizing_error(<span style=color:#ae81ff>0.01</span>, <span style=color:#ae81ff>2</span>)   <span style=color:#75715e># 2-qubit error</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Add errors to gates</span>
+</span></span><span style=display:flex><span>noise_model<span style=color:#f92672>.</span>add_all_qubit_quantum_error(error_1q, [<span style=color:#e6db74>&#39;h&#39;</span>, <span style=color:#e6db74>&#39;x&#39;</span>, <span style=color:#e6db74>&#39;y&#39;</span>, <span style=color:#e6db74>&#39;z&#39;</span>])
+</span></span><span style=display:flex><span>noise_model<span style=color:#f92672>.</span>add_all_qubit_quantum_error(error_2q, [<span style=color:#e6db74>&#39;cx&#39;</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Add thermal relaxation</span>
+</span></span><span style=display:flex><span>t1 <span style=color:#f92672>=</span> <span style=color:#ae81ff>50e3</span>  <span style=color:#75715e># T1 time (ns)</span>
+</span></span><span style=display:flex><span>t2 <span style=color:#f92672>=</span> <span style=color:#ae81ff>70e3</span>  <span style=color:#75715e># T2 time (ns)</span>
+</span></span><span style=display:flex><span>gate_time <span style=color:#f92672>=</span> <span style=color:#ae81ff>100</span>  <span style=color:#75715e># Gate time (ns)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>thermal_error <span style=color:#f92672>=</span> thermal_relaxation_error(t1, t2, gate_time)
+</span></span><span style=display:flex><span>noise_model<span style=color:#f92672>.</span>add_all_qubit_quantum_error(thermal_error, [<span style=color:#e6db74>&#39;h&#39;</span>, <span style=color:#e6db74>&#39;x&#39;</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(noise_model)
+</span></span></code></pre></div><h3 id=simulating-with-noise>Simulating with Noise
+<a class=anchor href=#simulating-with-noise>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit_aer <span style=color:#f92672>import</span> AerSimulator
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create noisy simulator</span>
+</span></span><span style=display:flex><span>noisy_simulator <span style=color:#f92672>=</span> AerSimulator(noise_model<span style=color:#f92672>=</span>noise_model)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Run circuit with noise</span>
+</span></span><span style=display:flex><span>job <span style=color:#f92672>=</span> noisy_simulator<span style=color:#f92672>.</span>run(transpiled_qc, shots<span style=color:#f92672>=</span><span style=color:#ae81ff>1024</span>)
+</span></span><span style=display:flex><span>result <span style=color:#f92672>=</span> job<span style=color:#f92672>.</span>result()
+</span></span><span style=display:flex><span>noisy_counts <span style=color:#f92672>=</span> result<span style=color:#f92672>.</span>get_counts()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Noisy results:&#34;</span>, noisy_counts)
+</span></span></code></pre></div><h3 id=noise-mitigation>Noise Mitigation
+<a class=anchor href=#noise-mitigation>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.ignis.mitigation.measurement <span style=color:#f92672>import</span> (
+</span></span><span style=display:flex><span>    complete_meas_cal,
+</span></span><span style=display:flex><span>    CompleteMeasFitter
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Generate calibration circuits</span>
+</span></span><span style=display:flex><span>qr <span style=color:#f92672>=</span> QuantumRegister(<span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>meas_calibs, state_labels <span style=color:#f92672>=</span> complete_meas_cal(qr<span style=color:#f92672>=</span>qr)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Run calibration circuits</span>
+</span></span><span style=display:flex><span>cal_job <span style=color:#f92672>=</span> simulator<span style=color:#f92672>.</span>run(meas_calibs, shots<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>)
+</span></span><span style=display:flex><span>cal_results <span style=color:#f92672>=</span> cal_job<span style=color:#f92672>.</span>result()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create measurement fitter</span>
+</span></span><span style=display:flex><span>meas_fitter <span style=color:#f92672>=</span> CompleteMeasFitter(cal_results, state_labels)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Apply mitigation</span>
+</span></span><span style=display:flex><span>mitigated_results <span style=color:#f92672>=</span> meas_fitter<span style=color:#f92672>.</span>filter<span style=color:#f92672>.</span>apply(result)
+</span></span><span style=display:flex><span>mitigated_counts <span style=color:#f92672>=</span> mitigated_results<span style=color:#f92672>.</span>get_counts()
+</span></span></code></pre></div><h2 id=advanced-circuit-techniques>Advanced Circuit Techniques
+<a class=anchor href=#advanced-circuit-techniques>#</a></h2><h3 id=dynamic-circuits-mid-circuit-measurements>Dynamic Circuits (Mid-Circuit Measurements)
+<a class=anchor href=#dynamic-circuits-mid-circuit-measurements>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit <span style=color:#f92672>import</span> QuantumCircuit, ClassicalRegister, QuantumRegister
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create registers</span>
+</span></span><span style=display:flex><span>qr <span style=color:#f92672>=</span> QuantumRegister(<span style=color:#ae81ff>2</span>, <span style=color:#e6db74>&#39;q&#39;</span>)
+</span></span><span style=display:flex><span>cr <span style=color:#f92672>=</span> ClassicalRegister(<span style=color:#ae81ff>2</span>, <span style=color:#e6db74>&#39;c&#39;</span>)
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> QuantumCircuit(qr, cr)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Perform mid-circuit measurement</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>h(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>measure(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Conditional operation based on measurement</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>x(<span style=color:#ae81ff>1</span>)<span style=color:#f92672>.</span>c_if(cr[<span style=color:#ae81ff>0</span>], <span style=color:#ae81ff>1</span>)  <span style=color:#75715e># Apply X if measurement was 1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>measure(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>)
+</span></span></code></pre></div><h3 id=pulse-level-control>Pulse-Level Control
+<a class=anchor href=#pulse-level-control>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit <span style=color:#f92672>import</span> pulse
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.pulse <span style=color:#f92672>import</span> library <span style=color:#66d9ef>as</span> pulse_lib
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Get backend&#39;s pulse properties</span>
+</span></span><span style=display:flex><span>backend <span style=color:#f92672>=</span> service<span style=color:#f92672>.</span>backend(<span style=color:#e6db74>&#34;ibm_brisbane&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create a pulse schedule</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> pulse<span style=color:#f92672>.</span>build(backend) <span style=color:#66d9ef>as</span> my_schedule:
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Define a Gaussian pulse</span>
+</span></span><span style=display:flex><span>    gaussian_pulse <span style=color:#f92672>=</span> pulse_lib<span style=color:#f92672>.</span>Gaussian(
+</span></span><span style=display:flex><span>        duration<span style=color:#f92672>=</span><span style=color:#ae81ff>160</span>,
+</span></span><span style=display:flex><span>        amp<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>,
+</span></span><span style=display:flex><span>        sigma<span style=color:#f92672>=</span><span style=color:#ae81ff>40</span>
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Play pulse on drive channel of qubit 0</span>
+</span></span><span style=display:flex><span>    drive_chan <span style=color:#f92672>=</span> pulse<span style=color:#f92672>.</span>drive_channel(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>    pulse<span style=color:#f92672>.</span>play(gaussian_pulse, drive_chan)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Measure</span>
+</span></span><span style=display:flex><span>    pulse<span style=color:#f92672>.</span>measure_all()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Execute pulse schedule</span>
+</span></span><span style=display:flex><span>job <span style=color:#f92672>=</span> backend<span style=color:#f92672>.</span>run(my_schedule)
+</span></span></code></pre></div><h2 id=circuit-synthesis-and-decomposition>Circuit Synthesis and Decomposition
+<a class=anchor href=#circuit-synthesis-and-decomposition>#</a></h2><h3 id=unitary-synthesis>Unitary Synthesis
+<a class=anchor href=#unitary-synthesis>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.quantum_info <span style=color:#f92672>import</span> Operator
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.synthesis <span style=color:#f92672>import</span> OneQubitEulerDecomposer
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Define a unitary matrix</span>
+</span></span><span style=display:flex><span>unitary_matrix <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array([
+</span></span><span style=display:flex><span>    [np<span style=color:#f92672>.</span>cos(np<span style=color:#f92672>.</span>pi<span style=color:#f92672>/</span><span style=color:#ae81ff>4</span>), <span style=color:#f92672>-</span>np<span style=color:#f92672>.</span>sin(np<span style=color:#f92672>.</span>pi<span style=color:#f92672>/</span><span style=color:#ae81ff>4</span>)],
+</span></span><span style=display:flex><span>    [np<span style=color:#f92672>.</span>sin(np<span style=color:#f92672>.</span>pi<span style=color:#f92672>/</span><span style=color:#ae81ff>4</span>), np<span style=color:#f92672>.</span>cos(np<span style=color:#f92672>.</span>pi<span style=color:#f92672>/</span><span style=color:#ae81ff>4</span>)]
+</span></span><span style=display:flex><span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create operator</span>
+</span></span><span style=display:flex><span>operator <span style=color:#f92672>=</span> Operator(unitary_matrix)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Synthesize circuit</span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>unitary(operator, [<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Decompose into basic gates</span>
+</span></span><span style=display:flex><span>decomposed <span style=color:#f92672>=</span> qc<span style=color:#f92672>.</span>decompose()
+</span></span><span style=display:flex><span>print(decomposed)
+</span></span></code></pre></div><h3 id=two-qubit-gate-decomposition>Two-Qubit Gate Decomposition
+<a class=anchor href=#two-qubit-gate-decomposition>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.synthesis <span style=color:#f92672>import</span> TwoQubitBasisDecomposer
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.circuit.library <span style=color:#f92672>import</span> CXGate
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create decomposer</span>
+</span></span><span style=display:flex><span>decomposer <span style=color:#f92672>=</span> TwoQubitBasisDecomposer(CXGate())
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Decompose a unitary into CX and single-qubit gates</span>
+</span></span><span style=display:flex><span>two_qubit_unitary <span style=color:#f92672>=</span> Operator<span style=color:#f92672>.</span>from_label(<span style=color:#e6db74>&#39;CZ&#39;</span>)
+</span></span><span style=display:flex><span>circuit <span style=color:#f92672>=</span> decomposer(two_qubit_unitary)
+</span></span></code></pre></div><h2 id=performance-optimization>Performance Optimization
+<a class=anchor href=#performance-optimization>#</a></h2><h3 id=circuit-caching>Circuit Caching
+<a class=anchor href=#circuit-caching>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> functools <span style=color:#f92672>import</span> lru_cache
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@lru_cache</span>(maxsize<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>create_qft_circuit</span>(n):
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;Cached QFT circuit creation&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    qc <span style=color:#f92672>=</span> QuantumCircuit(n)
+</span></span><span style=display:flex><span>    <span style=color:#75715e># ... QFT implementation</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> qc
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># First call computes and caches</span>
+</span></span><span style=display:flex><span>qft_3 <span style=color:#f92672>=</span> create_qft_circuit(<span style=color:#ae81ff>3</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Second call retrieves from cache</span>
+</span></span><span style=display:flex><span>qft_3_cached <span style=color:#f92672>=</span> create_qft_circuit(<span style=color:#ae81ff>3</span>)
+</span></span></code></pre></div><h3 id=batch-job-submission>Batch Job Submission
+<a class=anchor href=#batch-job-submission>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Submit multiple circuits at once</span>
+</span></span><span style=display:flex><span>circuits <span style=color:#f92672>=</span> [qc1, qc2, qc3, qc4]
+</span></span><span style=display:flex><span>transpiled_circuits <span style=color:#f92672>=</span> transpile(circuits, backend<span style=color:#f92672>=</span>backend)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Run as batch</span>
+</span></span><span style=display:flex><span>job <span style=color:#f92672>=</span> backend<span style=color:#f92672>.</span>run(transpiled_circuits, shots<span style=color:#f92672>=</span><span style=color:#ae81ff>1024</span>)
+</span></span><span style=display:flex><span>results <span style=color:#f92672>=</span> job<span style=color:#f92672>.</span>result()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Access individual results</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i, circuit <span style=color:#f92672>in</span> enumerate(circuits):
+</span></span><span style=display:flex><span>    counts <span style=color:#f92672>=</span> results<span style=color:#f92672>.</span>get_counts(i)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Circuit </span><span style=color:#e6db74>{</span>i<span style=color:#e6db74>}</span><span style=color:#e6db74> results: </span><span style=color:#e6db74>{</span>counts<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span></code></pre></div><h2 id=quantum-state-and-process-tomography>Quantum State and Process Tomography
+<a class=anchor href=#quantum-state-and-process-tomography>#</a></h2><h3 id=state-tomography>State Tomography
+<a class=anchor href=#state-tomography>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.ignis.verification.tomography <span style=color:#f92672>import</span> (
+</span></span><span style=display:flex><span>    state_tomography_circuits,
+</span></span><span style=display:flex><span>    StateTomographyFitter
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.quantum_info <span style=color:#f92672>import</span> state_fidelity
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create a Bell state</span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>h(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>cx(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Generate tomography circuits</span>
+</span></span><span style=display:flex><span>tomo_circuits <span style=color:#f92672>=</span> state_tomography_circuits(qc, [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Run tomography circuits</span>
+</span></span><span style=display:flex><span>job <span style=color:#f92672>=</span> simulator<span style=color:#f92672>.</span>run(tomo_circuits, shots<span style=color:#f92672>=</span><span style=color:#ae81ff>5000</span>)
+</span></span><span style=display:flex><span>result <span style=color:#f92672>=</span> job<span style=color:#f92672>.</span>result()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Fit the result to reconstruct state</span>
+</span></span><span style=display:flex><span>fitter <span style=color:#f92672>=</span> StateTomographyFitter(result, tomo_circuits)
+</span></span><span style=display:flex><span>rho <span style=color:#f92672>=</span> fitter<span style=color:#f92672>.</span>fit()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Calculate fidelity</span>
+</span></span><span style=display:flex><span>ideal_state <span style=color:#f92672>=</span> Statevector<span style=color:#f92672>.</span>from_label(<span style=color:#e6db74>&#39;00&#39;</span>)
+</span></span><span style=display:flex><span>fidelity <span style=color:#f92672>=</span> state_fidelity(rho, ideal_state)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;State fidelity: </span><span style=color:#e6db74>{</span>fidelity<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span></code></pre></div><h3 id=process-tomography>Process Tomography
+<a class=anchor href=#process-tomography>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.ignis.verification.tomography <span style=color:#f92672>import</span> (
+</span></span><span style=display:flex><span>    process_tomography_circuits,
+</span></span><span style=display:flex><span>    ProcessTomographyFitter
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Define the process (e.g., Hadamard gate)</span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>h(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Generate process tomography circuits</span>
+</span></span><span style=display:flex><span>tomo_circuits <span style=color:#f92672>=</span> process_tomography_circuits(qc, [<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Run and fit</span>
+</span></span><span style=display:flex><span>job <span style=color:#f92672>=</span> simulator<span style=color:#f92672>.</span>run(tomo_circuits, shots<span style=color:#f92672>=</span><span style=color:#ae81ff>5000</span>)
+</span></span><span style=display:flex><span>result <span style=color:#f92672>=</span> job<span style=color:#f92672>.</span>result()
+</span></span><span style=display:flex><span>fitter <span style=color:#f92672>=</span> ProcessTomographyFitter(result, tomo_circuits)
+</span></span><span style=display:flex><span>chi <span style=color:#f92672>=</span> fitter<span style=color:#f92672>.</span>fit()
+</span></span></code></pre></div><h2 id=debugging-and-profiling>Debugging and Profiling
+<a class=anchor href=#debugging-and-profiling>#</a></h2><h3 id=statevector-simulation>Statevector Simulation
+<a class=anchor href=#statevector-simulation>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.quantum_info <span style=color:#f92672>import</span> Statevector
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Get the statevector at any point</span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>h(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Get statevector</span>
+</span></span><span style=display:flex><span>state <span style=color:#f92672>=</span> Statevector(qc)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Statevector:&#34;</span>, state)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Visualize</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.visualization <span style=color:#f92672>import</span> plot_state_qsphere
+</span></span><span style=display:flex><span>plot_state_qsphere(state)
+</span></span></code></pre></div><h3 id=unitary-simulation>Unitary Simulation
+<a class=anchor href=#unitary-simulation>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.quantum_info <span style=color:#f92672>import</span> Operator
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Get the unitary matrix</span>
+</span></span><span style=display:flex><span>unitary <span style=color:#f92672>=</span> Operator(qc)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Unitary matrix:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, unitary<span style=color:#f92672>.</span>data)
+</span></span></code></pre></div><h3 id=circuit-profiling>Circuit Profiling
+<a class=anchor href=#circuit-profiling>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> time
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Time circuit execution</span>
+</span></span><span style=display:flex><span>start <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>job <span style=color:#f92672>=</span> simulator<span style=color:#f92672>.</span>run(qc, shots<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>)
+</span></span><span style=display:flex><span>result <span style=color:#f92672>=</span> job<span style=color:#f92672>.</span>result()
+</span></span><span style=display:flex><span>elapsed <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time() <span style=color:#f92672>-</span> start
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Execution time: </span><span style=color:#e6db74>{</span>elapsed<span style=color:#e6db74>:</span><span style=color:#e6db74>.3f</span><span style=color:#e6db74>}</span><span style=color:#e6db74>s&#34;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Circuit depth: </span><span style=color:#e6db74>{</span>qc<span style=color:#f92672>.</span>depth()<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Gate count: </span><span style=color:#e6db74>{</span>sum(qc<span style=color:#f92672>.</span>count_ops()<span style=color:#f92672>.</span>values())<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span></code></pre></div><h2 id=best-practices>Best Practices
+<a class=anchor href=#best-practices>#</a></h2><h3 id=1-always-transpile-for-target-backend>1. Always Transpile for Target Backend
+<a class=anchor href=#1-always-transpile-for-target-backend>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Good</span>
+</span></span><span style=display:flex><span>transpiled <span style=color:#f92672>=</span> transpile(qc, backend<span style=color:#f92672>=</span>backend, optimization_level<span style=color:#f92672>=</span><span style=color:#ae81ff>3</span>)
+</span></span><span style=display:flex><span>job <span style=color:#f92672>=</span> backend<span style=color:#f92672>.</span>run(transpiled)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Avoid running raw circuits on hardware</span>
+</span></span></code></pre></div><h3 id=2-use-error-mitigation>2. Use Error Mitigation
+<a class=anchor href=#2-use-error-mitigation>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Apply measurement error mitigation</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Use dynamical decoupling</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Implement zero-noise extrapolation</span>
+</span></span></code></pre></div><h3 id=3-minimize-circuit-depth>3. Minimize Circuit Depth
+<a class=anchor href=#3-minimize-circuit-depth>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Use native gates when possible</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Apply optimization passes</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Remove unnecessary gates</span>
+</span></span></code></pre></div><h3 id=4-handle-job-failures-gracefully>4. Handle Job Failures Gracefully
+<a class=anchor href=#4-handle-job-failures-gracefully>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>try</span>:
+</span></span><span style=display:flex><span>    result <span style=color:#f92672>=</span> job<span style=color:#f92672>.</span>result()
+</span></span><span style=display:flex><span><span style=color:#66d9ef>except</span> <span style=color:#a6e22e>Exception</span> <span style=color:#66d9ef>as</span> e:
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Job failed: </span><span style=color:#e6db74>{</span>e<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Implement retry logic</span>
+</span></span></code></pre></div><h2 id=further-learning-resources>Further Learning Resources
+<a class=anchor href=#further-learning-resources>#</a></h2><ul><li><strong>Qiskit Textbook</strong>: <a href=https://qiskit.org/textbook>qiskit.org/textbook</a></li><li><strong>Qiskit Documentation</strong>: <a href=https://qiskit.org/documentation>qiskit.org/documentation</a></li><li><strong>IBM Quantum Learning</strong>: <a href=https://quantum-computing.ibm.com/learn>quantum-computing.ibm.com/learn</a></li><li><strong>Qiskit GitHub</strong>: <a href=https://github.com/Qiskit>github.com/Qiskit</a></li></ul><h2 id=conclusion>Conclusion
+<a class=anchor href=#conclusion>#</a></h2><p>You now have the tools to:</p><ul><li>Run circuits on real quantum hardware</li><li>Optimize circuits for specific backends</li><li>Simulate and mitigate noise</li><li>Implement advanced quantum algorithms</li><li>Debug and profile quantum programs</li></ul><p>Continue exploring, experimenting, and building quantum applications with Qiskit!</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#running-on-real-quantum-hardware>Running on Real Quantum Hardware</a><ul><li><a href=#connecting-to-ibm-quantum>Connecting to IBM Quantum</a></li><li><a href=#submitting-jobs-to-real-hardware>Submitting Jobs to Real Hardware</a></li><li><a href=#using-qiskit-runtime>Using Qiskit Runtime</a></li></ul></li><li><a href=#circuit-optimization-and-transpilation>Circuit Optimization and Transpilation</a><ul><li><a href=#understanding-transpilation>Understanding Transpilation</a></li><li><a href=#custom-pass-manager>Custom Pass Manager</a></li></ul></li><li><a href=#noise-simulation-and-mitigation>Noise Simulation and Mitigation</a><ul><li><a href=#creating-noise-models>Creating Noise Models</a></li><li><a href=#simulating-with-noise>Simulating with Noise</a></li><li><a href=#noise-mitigation>Noise Mitigation</a></li></ul></li><li><a href=#advanced-circuit-techniques>Advanced Circuit Techniques</a><ul><li><a href=#dynamic-circuits-mid-circuit-measurements>Dynamic Circuits (Mid-Circuit Measurements)</a></li><li><a href=#pulse-level-control>Pulse-Level Control</a></li></ul></li><li><a href=#circuit-synthesis-and-decomposition>Circuit Synthesis and Decomposition</a><ul><li><a href=#unitary-synthesis>Unitary Synthesis</a></li><li><a href=#two-qubit-gate-decomposition>Two-Qubit Gate Decomposition</a></li></ul></li><li><a href=#performance-optimization>Performance Optimization</a><ul><li><a href=#circuit-caching>Circuit Caching</a></li><li><a href=#batch-job-submission>Batch Job Submission</a></li></ul></li><li><a href=#quantum-state-and-process-tomography>Quantum State and Process Tomography</a><ul><li><a href=#state-tomography>State Tomography</a></li><li><a href=#process-tomography>Process Tomography</a></li></ul></li><li><a href=#debugging-and-profiling>Debugging and Profiling</a><ul><li><a href=#statevector-simulation>Statevector Simulation</a></li><li><a href=#unitary-simulation>Unitary Simulation</a></li><li><a href=#circuit-profiling>Circuit Profiling</a></li></ul></li><li><a href=#best-practices>Best Practices</a><ul><li><a href=#1-always-transpile-for-target-backend>1. Always Transpile for Target Backend</a></li><li><a href=#2-use-error-mitigation>2. Use Error Mitigation</a></li><li><a href=#3-minimize-circuit-depth>3. Minimize Circuit Depth</a></li><li><a href=#4-handle-job-failures-gracefully>4. Handle Job Failures Gracefully</a></li></ul></li><li><a href=#further-learning-resources>Further Learning Resources</a></li><li><a href=#conclusion>Conclusion</a></li></ul></nav></div></aside></main></body></html>

@@ -1,0 +1,109 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+  System Requirements
+  #
+
+Before installing Qiskit, ensure your system meets these requirements:
+
+Python: Version 3.8 or later (3.9+ recommended)
+Operating System: Windows, macOS, or Linux
+RAM: At least 4GB (8GB+ recommended for larger simulations)
+Internet Connection: For accessing IBM Quantum services
+
+
+  Installing Python
+  #
+
+If you don&rsquo;t have Python installed:
+
+  Windows
+  #
+
+Download from python.org and run the installer. Make sure to check &ldquo;Add Python to PATH.&rdquo;
+
+  macOS
+  #
+
+# Using Homebrew
+brew install python3
+
+  Linux (Ubuntu/Debian)
+  #
+
+sudo apt update
+sudo apt install python3 python3-pip
+
+  Installing Qiskit
+  #
+
+
+  Using pip (Recommended)
+  #
+
+The simplest way to install Qiskit is using pip:"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-installation/"><meta property="og:site_name" content="Quantum Crypt Lab"><meta property="og:title" content="Installation and Setup"><meta property="og:description" content="System Requirements # Before installing Qiskit, ensure your system meets these requirements:
+Python: Version 3.8 or later (3.9+ recommended) Operating System: Windows, macOS, or Linux RAM: At least 4GB (8GB+ recommended for larger simulations) Internet Connection: For accessing IBM Quantum services Installing Python # If you don’t have Python installed:
+Windows # Download from python.org and run the installer. Make sure to check “Add Python to PATH.”
+macOS # # Using Homebrew brew install python3 Linux (Ubuntu/Debian) # sudo apt update sudo apt install python3 python3-pip Installing Qiskit # Using pip (Recommended) # The simplest way to install Qiskit is using pip:"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="quantum-computing"><title>Installation and Setup | Quantum Crypt Lab</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-installation/><link rel=stylesheet href=/book.min.f4bc2b0f80cbd784c51fa6123079c0ec4d90946148cb1cc5e0279ca61d81a19d.css integrity="sha256-9LwrD4DL14TFH6YSMHnA7E2QlGFIyxzF4Cecph2BoZ0=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.0622bfed81787ede4cbbddffa8b3ba2fdb060e440d98bee2f4e22e824c8c2bf9.js integrity="sha256-BiK/7YF4ft5Mu93/qLO6L9sGDkQNmL7i9OIugkyMK/k=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>Quantum Crypt Lab</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/learning-resources/>Learning Resources</a><ul><li><a href=/learning-resources/books/>Books</a></li><li><a href=/learning-resources/papers/>Research Papers</a></li><li><a href=/learning-resources/video-courses/>Video Courses</a></li></ul></li><li><span>Quantum Computing</span><ul><li><a href=/quantum-computing/introduction-quantum-computing/>Introduction to Quantum Computing</a></li><li><a href=/quantum-computing/qiskit/>Qiskit</a><ul><li><a href=/quantum-computing/qiskit/qiskit-introduction/>Introduction to Qiskit</a></li><li><a href=/quantum-computing/qiskit/qiskit-installation/ class=active>Installation and Setup</a></li><li><a href=/quantum-computing/qiskit/qiskit-basic-circuits/>Basic Quantum Circuits</a></li><li><a href=/quantum-computing/qiskit/qiskit-algorithms/>Quantum Algorithms with Qiskit</a></li><li><a href=/quantum-computing/qiskit/qiskit-advanced/>Advanced Qiskit Topics</a></li></ul></li></ul></li><li><a href=/about/>test</a></li><li><a href=/quantum-physics/>Quantum Physics</a><ul><li><a href=/quantum-physics/quantum-entanglement/>Quantum Entanglement</a></li><li><a href=/quantum-physics/quantum-superposition/>Quantum Superposition</a></li></ul></li><li><a href=/cryptography/>Cryptography</a><ul><li><a href=/cryptography/zero-knowledge-proof/>Zero-Knowledge Proofs</a><ul><li><a href=/cryptography/zero-knowledge-proof/schnorrs-identification-protocol/>Schnorr's Identification Protocol</a><ul></ul></li></ul></li></ul></li><li><a href=/mathematics/>Mathematics</a><ul><li><a href=/mathematics/boolean-algebra/>Boolean Algebra</a><ul></ul></li><li><a href=/mathematics/group-theory/>Group Theory</a><ul></ul></li></ul></li><li><a href=/research/>Research</a><ul></ul></li><li><a href=/ai/>Artificial Intelligence</a><ul><li><a href=/ai/ai-in-crypto/>AI in crypto</a><ul></ul></li><li><a href=/ai/ai-security/>AI Security</a><ul><li><a href=/ai/ai-security/homomorphic-encryption/>homomorphic encryption</a></li></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>Installation and Setup</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#system-requirements>System Requirements</a></li><li><a href=#installing-python>Installing Python</a><ul><li><a href=#windows>Windows</a></li><li><a href=#macos>macOS</a></li><li><a href=#linux-ubuntudebian>Linux (Ubuntu/Debian)</a></li></ul></li><li><a href=#installing-qiskit>Installing Qiskit</a><ul><li><a href=#using-pip-recommended>Using pip (Recommended)</a></li><li><a href=#using-conda>Using Conda</a></li></ul></li><li><a href=#verifying-installation>Verifying Installation</a></li><li><a href=#setting-up-ibm-quantum-access>Setting Up IBM Quantum Access</a></li><li><a href=#development-environment-options>Development Environment Options</a><ul><li><a href=#jupyter-notebook-recommended-for-learning>Jupyter Notebook (Recommended for Learning)</a></li><li><a href=#visual-studio-code>Visual Studio Code</a></li><li><a href=#google-colab>Google Colab</a></li></ul></li><li><a href=#installing-visualization-dependencies>Installing Visualization Dependencies</a></li><li><a href=#troubleshooting>Troubleshooting</a><ul><li><a href=#common-issues>Common Issues</a></li></ul></li><li><a href=#updating-qiskit>Updating Qiskit</a></li><li><a href=#next-steps>Next Steps</a></li></ul></nav></aside></header><article class="markdown book-article"><h2 id=system-requirements>System Requirements
+<a class=anchor href=#system-requirements>#</a></h2><p>Before installing Qiskit, ensure your system meets these requirements:</p><ul><li><strong>Python</strong>: Version 3.8 or later (3.9+ recommended)</li><li><strong>Operating System</strong>: Windows, macOS, or Linux</li><li><strong>RAM</strong>: At least 4GB (8GB+ recommended for larger simulations)</li><li><strong>Internet Connection</strong>: For accessing IBM Quantum services</li></ul><h2 id=installing-python>Installing Python
+<a class=anchor href=#installing-python>#</a></h2><p>If you don&rsquo;t have Python installed:</p><h3 id=windows>Windows
+<a class=anchor href=#windows>#</a></h3><p>Download from <a href=https://www.python.org/downloads/>python.org</a> and run the installer. Make sure to check &ldquo;Add Python to PATH.&rdquo;</p><h3 id=macos>macOS
+<a class=anchor href=#macos>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Using Homebrew</span>
+</span></span><span style=display:flex><span>brew install python3
+</span></span></code></pre></div><h3 id=linux-ubuntudebian>Linux (Ubuntu/Debian)
+<a class=anchor href=#linux-ubuntudebian>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sudo apt update
+</span></span><span style=display:flex><span>sudo apt install python3 python3-pip
+</span></span></code></pre></div><h2 id=installing-qiskit>Installing Qiskit
+<a class=anchor href=#installing-qiskit>#</a></h2><h3 id=using-pip-recommended>Using pip (Recommended)
+<a class=anchor href=#using-pip-recommended>#</a></h3><p>The simplest way to install Qiskit is using pip:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>pip install qiskit
+</span></span></code></pre></div><p>For the complete package with visualization tools:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>pip install <span style=color:#e6db74>&#39;qiskit[visualization]&#39;</span>
+</span></span></code></pre></div><p>To install additional modules:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>pip install qiskit-aer  <span style=color:#75715e># High-performance simulators</span>
+</span></span><span style=display:flex><span>pip install qiskit-ibm-runtime  <span style=color:#75715e># IBM Quantum access</span>
+</span></span></code></pre></div><h3 id=using-conda>Using Conda
+<a class=anchor href=#using-conda>#</a></h3><p>If you prefer Conda:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>conda create -n qiskit-env python<span style=color:#f92672>=</span>3.9
+</span></span><span style=display:flex><span>conda activate qiskit-env
+</span></span><span style=display:flex><span>conda install -c conda-forge qiskit
+</span></span></code></pre></div><h2 id=verifying-installation>Verifying Installation
+<a class=anchor href=#verifying-installation>#</a></h2><p>Test your installation by running:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> qiskit
+</span></span><span style=display:flex><span>print(qiskit<span style=color:#f92672>.</span>__version__)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create a simple quantum circuit</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit <span style=color:#f92672>import</span> QuantumCircuit
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>h(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>cx(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>print(qc)
+</span></span></code></pre></div><p>If this runs without errors, your installation is successful!</p><h2 id=setting-up-ibm-quantum-access>Setting Up IBM Quantum Access
+<a class=anchor href=#setting-up-ibm-quantum-access>#</a></h2><p>To run circuits on real quantum hardware:</p><ol><li><p><strong>Create an IBM Quantum Account</strong></p><ul><li>Visit <a href=https://quantum.ibm.com/>quantum.ibm.com</a></li><li>Sign up for a free account</li><li>Navigate to your account settings to find your API token</li></ul></li><li><p><strong>Save Your API Token</strong></p></li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit_ibm_runtime <span style=color:#f92672>import</span> QiskitRuntimeService
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Save your credentials (one-time setup)</span>
+</span></span><span style=display:flex><span>QiskitRuntimeService<span style=color:#f92672>.</span>save_account(
+</span></span><span style=display:flex><span>    channel<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;ibm_quantum&#34;</span>,
+</span></span><span style=display:flex><span>    token<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;YOUR_API_TOKEN_HERE&#34;</span>
+</span></span><span style=display:flex><span>)
+</span></span></code></pre></div><ol start=3><li><strong>Load Your Account</strong></li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># In subsequent sessions</span>
+</span></span><span style=display:flex><span>service <span style=color:#f92672>=</span> QiskitRuntimeService(channel<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;ibm_quantum&#34;</span>)
+</span></span></code></pre></div><h2 id=development-environment-options>Development Environment Options
+<a class=anchor href=#development-environment-options>#</a></h2><h3 id=jupyter-notebook-recommended-for-learning>Jupyter Notebook (Recommended for Learning)
+<a class=anchor href=#jupyter-notebook-recommended-for-learning>#</a></h3><p>Install Jupyter:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>pip install jupyter
+</span></span></code></pre></div><p>Start Jupyter:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>jupyter notebook
+</span></span></code></pre></div><h3 id=visual-studio-code>Visual Studio Code
+<a class=anchor href=#visual-studio-code>#</a></h3><ol><li>Install VS Code from <a href=https://code.visualstudio.com/>code.visualstudio.com</a></li><li>Install the Python extension</li><li>Install the Jupyter extension (optional but helpful)</li></ol><h3 id=google-colab>Google Colab
+<a class=anchor href=#google-colab>#</a></h3><p>For cloud-based development without local installation:</p><ul><li>Visit <a href=https://colab.research.google.com/>colab.research.google.com</a></li><li>Install Qiskit in each notebook:</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>!</span>pip install qiskit
+</span></span></code></pre></div><h2 id=installing-visualization-dependencies>Installing Visualization Dependencies
+<a class=anchor href=#installing-visualization-dependencies>#</a></h2><p>For circuit and result visualization:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>pip install matplotlib
+</span></span><span style=display:flex><span>pip install pylatexenc  <span style=color:#75715e># For LaTeX-style circuit drawings</span>
+</span></span></code></pre></div><h2 id=troubleshooting>Troubleshooting
+<a class=anchor href=#troubleshooting>#</a></h2><h3 id=common-issues>Common Issues
+<a class=anchor href=#common-issues>#</a></h3><p><strong>Import Error: No module named &lsquo;qiskit&rsquo;</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Make sure you&#39;re using the correct Python environment</span>
+</span></span><span style=display:flex><span>which python
+</span></span><span style=display:flex><span>pip list | grep qiskit
+</span></span></code></pre></div><p><strong>Visualization Issues</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Install additional dependencies</span>
+</span></span><span style=display:flex><span>pip install pillow
+</span></span><span style=display:flex><span>pip install pydot
+</span></span></code></pre></div><p><strong>Permission Errors on Linux/macOS</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Use --user flag</span>
+</span></span><span style=display:flex><span>pip install --user qiskit
+</span></span></code></pre></div><h2 id=updating-qiskit>Updating Qiskit
+<a class=anchor href=#updating-qiskit>#</a></h2><p>Keep Qiskit up to date:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>pip install --upgrade qiskit
+</span></span></code></pre></div><h2 id=next-steps>Next Steps
+<a class=anchor href=#next-steps>#</a></h2><p>Now that Qiskit is installed, you&rsquo;re ready to:</p><ul><li>Create your first quantum circuit</li><li>Run simulations</li><li>Explore quantum algorithms</li><li>Access real quantum hardware</li></ul><p>Let&rsquo;s dive into building quantum circuits in the next section!</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#system-requirements>System Requirements</a></li><li><a href=#installing-python>Installing Python</a><ul><li><a href=#windows>Windows</a></li><li><a href=#macos>macOS</a></li><li><a href=#linux-ubuntudebian>Linux (Ubuntu/Debian)</a></li></ul></li><li><a href=#installing-qiskit>Installing Qiskit</a><ul><li><a href=#using-pip-recommended>Using pip (Recommended)</a></li><li><a href=#using-conda>Using Conda</a></li></ul></li><li><a href=#verifying-installation>Verifying Installation</a></li><li><a href=#setting-up-ibm-quantum-access>Setting Up IBM Quantum Access</a></li><li><a href=#development-environment-options>Development Environment Options</a><ul><li><a href=#jupyter-notebook-recommended-for-learning>Jupyter Notebook (Recommended for Learning)</a></li><li><a href=#visual-studio-code>Visual Studio Code</a></li><li><a href=#google-colab>Google Colab</a></li></ul></li><li><a href=#installing-visualization-dependencies>Installing Visualization Dependencies</a></li><li><a href=#troubleshooting>Troubleshooting</a><ul><li><a href=#common-issues>Common Issues</a></li></ul></li><li><a href=#updating-qiskit>Updating Qiskit</a></li><li><a href=#next-steps>Next Steps</a></li></ul></nav></div></aside></main></body></html>

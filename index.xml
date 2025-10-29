@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Quantum Crypt Lab</title><link>https://www.quantumcryptlab.org/</link><description>Recent content on Quantum Crypt Lab</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.quantumcryptlab.org/index.xml" rel="self" type="application/rss+xml"/><item><title>homomorphic encryption</title><link>https://www.quantumcryptlab.org/ai/ai-security/homomorphic-encryption/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/ai/ai-security/homomorphic-encryption/</guid><description>&lt;p&gt;Content goes here&amp;hellip;&lt;/p&gt;</description></item><item><title>Introduction to Qiskit</title><link>https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-introduction/</guid><description>&lt;h2 id="what-is-qiskit"&gt;
+ What is Qiskit?
+ &lt;a class="anchor" href="#what-is-qiskit"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Qiskit is IBM&amp;rsquo;s open-source quantum computing framework that allows developers and researchers to work with quantum computers using Python. The name &amp;ldquo;Qiskit&amp;rdquo; stands for &amp;ldquo;Quantum Information Science Kit,&amp;rdquo; and it has become one of the most popular tools for quantum computing development.&lt;/p&gt;
+&lt;h2 id="why-qiskit"&gt;
+ Why Qiskit?
+ &lt;a class="anchor" href="#why-qiskit"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Qiskit offers several advantages for learning and working with quantum computing:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Open Source&lt;/strong&gt;: Completely free and open-source with an active community&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Python-Based&lt;/strong&gt;: Uses the familiar Python programming language&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Comprehensive&lt;/strong&gt;: Covers everything from basic circuits to advanced algorithms&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Real Hardware Access&lt;/strong&gt;: Connect to actual IBM quantum computers via the cloud&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Well-Documented&lt;/strong&gt;: Extensive tutorials, documentation, and learning resources&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="qiskit-components"&gt;
+ Qiskit Components
+ &lt;a class="anchor" href="#qiskit-components"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Qiskit is organized into several key modules:&lt;/p&gt;</description></item><item><title>Introduction to Quantum Computing</title><link>https://www.quantumcryptlab.org/quantum-computing/introduction-quantum-computing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/quantum-computing/introduction-quantum-computing/</guid><description>&lt;p&gt;Quantum computing is a revolutionary technology that harnesses the principles of quantum mechanics to process information in fundamentally new ways. Unlike classical computers that we use every day, quantum computers operate based on quantum phenomena that seem strange but offer incredible potential.&lt;/p&gt;
+&lt;h2 id="key-concepts"&gt;
+ Key Concepts
+ &lt;a class="anchor" href="#key-concepts"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="quantum-bits-qubits"&gt;
+ Quantum Bits (Qubits)
+ &lt;a class="anchor" href="#quantum-bits-qubits"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Classical computers use bits that are either 0 or 1, like a light switch that&amp;rsquo;s either off or on. Quantum bits (qubits) are different in two amazing ways:&lt;/p&gt;</description></item><item><title>Photon Polarization</title><link>https://www.quantumcryptlab.org/quantum-physics/photon-polarization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/quantum-physics/photon-polarization/</guid><description/></item><item><title>Quantum Entanglement</title><link>https://www.quantumcryptlab.org/quantum-physics/quantum-entanglement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/quantum-physics/quantum-entanglement/</guid><description>&lt;h1 id="quantum-entanglement"&gt;
+ Quantum Entanglement
+ &lt;a class="anchor" href="#quantum-entanglement"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Quantum entanglement is a fascinating phenomenon where two or more particles become correlated in such a way that the quantum state of each particle cannot be described independently, even when separated by large distances.&lt;/p&gt;
+&lt;h2 id="mathematical-description"&gt;
+ Mathematical Description
+ &lt;a class="anchor" href="#mathematical-description"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The simplest example of an entangled state is the Bell state, also known as an EPR pair. For two qubits, one of the Bell states can be written as:&lt;/p&gt;</description></item><item><title>Quantum Superposition</title><link>https://www.quantumcryptlab.org/quantum-physics/quantum-superposition/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/quantum-physics/quantum-superposition/</guid><description>&lt;h1 id="quantum-superposition"&gt;
+ Quantum Superposition
+ &lt;a class="anchor" href="#quantum-superposition"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Quantum superposition is one of the fundamental principles of quantum mechanics. It states that a quantum system can exist in multiple states simultaneously until it is measured.&lt;/p&gt;
+&lt;h2 id="mathematical-description"&gt;
+ Mathematical Description
+ &lt;a class="anchor" href="#mathematical-description"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In quantum mechanics, we can describe a quantum state |ψ⟩ as a superposition of basis states. For example, a qubit can be written as:&lt;/p&gt;
+
+&lt;link rel="stylesheet" href="https://www.quantumcryptlab.org/katex/katex.min.css" /&gt;
+&lt;script defer src="https://www.quantumcryptlab.org/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://www.quantumcryptlab.org/katex/auto-render.min.js" onload="renderMathInElement(document.body);"&gt;&lt;/script&gt;&lt;span&gt;
+ \[
+|\psi\rangle = \alpha|0\rangle + \beta|1\rangle
+\]
+&lt;/span&gt;
+
+&lt;p&gt;where α and β are complex numbers satisfying:&lt;/p&gt;</description></item><item><title>test</title><link>https://www.quantumcryptlab.org/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/about/</guid><description>&lt;p&gt;Content goes here&amp;hellip;&lt;/p&gt;</description></item><item><title>Books</title><link>https://www.quantumcryptlab.org/learning-resources/books/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/learning-resources/books/</guid><description>&lt;h1 id="books"&gt;
+ Books
+ &lt;a class="anchor" href="#books"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="quantum-computing"&gt;
+ Quantum Computing
+ &lt;a class="anchor" href="#quantum-computing"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="beginner-level"&gt;
+ Beginner Level
+ &lt;a class="anchor" href="#beginner-level"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="intermediate-level"&gt;
+ Intermediate Level
+ &lt;a class="anchor" href="#intermediate-level"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="advanced-level"&gt;
+ Advanced Level
+ &lt;a class="anchor" href="#advanced-level"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h2 id="cryptography"&gt;
+ Cryptography
+ &lt;a class="anchor" href="#cryptography"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="classical-cryptography"&gt;
+ Classical Cryptography
+ &lt;a class="anchor" href="#classical-cryptography"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="quantum-cryptography"&gt;
+ Quantum Cryptography
+ &lt;a class="anchor" href="#quantum-cryptography"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h2 id="mathematics"&gt;
+ Mathematics
+ &lt;a class="anchor" href="#mathematics"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="linear-algebra"&gt;
+ Linear Algebra
+ &lt;a class="anchor" href="#linear-algebra"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="group-theory"&gt;
+ Group Theory
+ &lt;a class="anchor" href="#group-theory"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="boolean-algebra"&gt;
+ Boolean Algebra
+ &lt;a class="anchor" href="#boolean-algebra"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h2 id="artificial-intelligence"&gt;
+ Artificial Intelligence
+ &lt;a class="anchor" href="#artificial-intelligence"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="machine-learning"&gt;
+ Machine Learning
+ &lt;a class="anchor" href="#machine-learning"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="ai-in-cryptography"&gt;
+ AI in Cryptography
+ &lt;a class="anchor" href="#ai-in-cryptography"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h2 id="research-and-advanced-topics"&gt;
+ Research and Advanced Topics
+ &lt;a class="anchor" href="#research-and-advanced-topics"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="quantum-machine-learning"&gt;
+ Quantum Machine Learning
+ &lt;a class="anchor" href="#quantum-machine-learning"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="zero-knowledge-proofs"&gt;
+ Zero-Knowledge Proofs
+ &lt;a class="anchor" href="#zero-knowledge-proofs"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;dl&gt;
+
+&lt;/dl&gt;</description></item><item><title>Installation and Setup</title><link>https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-installation/</guid><description>&lt;h2 id="system-requirements"&gt;
+ System Requirements
+ &lt;a class="anchor" href="#system-requirements"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Before installing Qiskit, ensure your system meets these requirements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Python&lt;/strong&gt;: Version 3.8 or later (3.9+ recommended)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Operating System&lt;/strong&gt;: Windows, macOS, or Linux&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RAM&lt;/strong&gt;: At least 4GB (8GB+ recommended for larger simulations)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Internet Connection&lt;/strong&gt;: For accessing IBM Quantum services&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="installing-python"&gt;
+ Installing Python
+ &lt;a class="anchor" href="#installing-python"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;If you don&amp;rsquo;t have Python installed:&lt;/p&gt;
+&lt;h3 id="windows"&gt;
+ Windows
+ &lt;a class="anchor" href="#windows"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Download from &lt;a href="https://www.python.org/downloads/"&gt;python.org&lt;/a&gt; and run the installer. Make sure to check &amp;ldquo;Add Python to PATH.&amp;rdquo;&lt;/p&gt;
+&lt;h3 id="macos"&gt;
+ macOS
+ &lt;a class="anchor" href="#macos"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Using Homebrew&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install python3
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="linux-ubuntudebian"&gt;
+ Linux (Ubuntu/Debian)
+ &lt;a class="anchor" href="#linux-ubuntudebian"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install python3 python3-pip
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="installing-qiskit"&gt;
+ Installing Qiskit
+ &lt;a class="anchor" href="#installing-qiskit"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="using-pip-recommended"&gt;
+ Using pip (Recommended)
+ &lt;a class="anchor" href="#using-pip-recommended"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;The simplest way to install Qiskit is using pip:&lt;/p&gt;</description></item><item><title>Basic Quantum Circuits</title><link>https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-basic-circuits/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-basic-circuits/</guid><description>&lt;h2 id="your-first-quantum-circuit"&gt;
+ Your First Quantum Circuit
+ &lt;a class="anchor" href="#your-first-quantum-circuit"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s start by creating a simple quantum circuit in Qiskit:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;from&lt;/span&gt; qiskit &lt;span style="color:#f92672"&gt;import&lt;/span&gt; QuantumCircuit
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Create a quantum circuit with 2 qubits&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;qc &lt;span style="color:#f92672"&gt;=&lt;/span&gt; QuantumCircuit(&lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Add a Hadamard gate to the first qubit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;qc&lt;span style="color:#f92672"&gt;.&lt;/span&gt;h(&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Add a CNOT gate with qubit 0 as control and qubit 1 as target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;qc&lt;span style="color:#f92672"&gt;.&lt;/span&gt;cx(&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Visualize the circuit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(qc)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This creates a Bell state, one of the fundamental entangled quantum states!&lt;/p&gt;</description></item><item><title>Research Papers</title><link>https://www.quantumcryptlab.org/learning-resources/papers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/learning-resources/papers/</guid><description>&lt;h1 id="research-papers"&gt;
+ Research Papers
+ &lt;a class="anchor" href="#research-papers"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="quantum-computing"&gt;
+ Quantum Computing
+ &lt;a class="anchor" href="#quantum-computing"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="foundational-papers"&gt;
+ Foundational Papers
+ &lt;a class="anchor" href="#foundational-papers"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="quantum-algorithms"&gt;
+ Quantum Algorithms
+ &lt;a class="anchor" href="#quantum-algorithms"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="quantum-error-correction"&gt;
+ Quantum Error Correction
+ &lt;a class="anchor" href="#quantum-error-correction"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h2 id="cryptography"&gt;
+ Cryptography
+ &lt;a class="anchor" href="#cryptography"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="classical-cryptography"&gt;
+ Classical Cryptography
+ &lt;a class="anchor" href="#classical-cryptography"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="quantum-cryptography"&gt;
+ Quantum Cryptography
+ &lt;a class="anchor" href="#quantum-cryptography"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="post-quantum-cryptography"&gt;
+ Post-Quantum Cryptography
+ &lt;a class="anchor" href="#post-quantum-cryptography"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h2 id="zero-knowledge-proofs"&gt;
+ Zero-Knowledge Proofs
+ &lt;a class="anchor" href="#zero-knowledge-proofs"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="foundational-work"&gt;
+ Foundational Work
+ &lt;a class="anchor" href="#foundational-work"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="modern-developments"&gt;
+ Modern Developments
+ &lt;a class="anchor" href="#modern-developments"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h2 id="artificial-intelligence-and-machine-learning"&gt;
+ Artificial Intelligence and Machine Learning
+ &lt;a class="anchor" href="#artificial-intelligence-and-machine-learning"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="quantum-machine-learning"&gt;
+ Quantum Machine Learning
+ &lt;a class="anchor" href="#quantum-machine-learning"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="ai-in-cryptography"&gt;
+ AI in Cryptography
+ &lt;a class="anchor" href="#ai-in-cryptography"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h2 id="mathematics"&gt;
+ Mathematics
+ &lt;a class="anchor" href="#mathematics"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="group-theory-in-cryptography"&gt;
+ Group Theory in Cryptography
+ &lt;a class="anchor" href="#group-theory-in-cryptography"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="lattice-theory"&gt;
+ Lattice Theory
+ &lt;a class="anchor" href="#lattice-theory"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h2 id="recent-developments-2020-2024"&gt;
+ Recent Developments (2020-2024)
+ &lt;a class="anchor" href="#recent-developments-2020-2024"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="quantum-supremacy"&gt;
+ Quantum Supremacy
+ &lt;a class="anchor" href="#quantum-supremacy"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="post-quantum-standardization"&gt;
+ Post-Quantum Standardization
+ &lt;a class="anchor" href="#post-quantum-standardization"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="zero-knowledge-applications"&gt;
+ Zero-Knowledge Applications
+ &lt;a class="anchor" href="#zero-knowledge-applications"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;dl&gt;
+
+&lt;/dl&gt;</description></item><item><title>Quantum Algorithms with Qiskit</title><link>https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-algorithms/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-algorithms/</guid><description>&lt;h2 id="introduction-to-quantum-algorithms"&gt;
+ Introduction to Quantum Algorithms
+ &lt;a class="anchor" href="#introduction-to-quantum-algorithms"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Quantum algorithms leverage quantum mechanical phenomena like superposition and entanglement to solve problems more efficiently than classical algorithms. In this section, we&amp;rsquo;ll implement several fundamental quantum algorithms using Qiskit.&lt;/p&gt;
+&lt;h2 id="deutsch-jozsa-algorithm"&gt;
+ Deutsch-Jozsa Algorithm
+ &lt;a class="anchor" href="#deutsch-jozsa-algorithm"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The Deutsch-Jozsa algorithm determines whether a function is constant or balanced with just one query, whereas a classical algorithm would need multiple queries.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;from&lt;/span&gt; qiskit &lt;span style="color:#f92672"&gt;import&lt;/span&gt; QuantumCircuit
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;from&lt;/span&gt; qiskit_aer &lt;span style="color:#f92672"&gt;import&lt;/span&gt; AerSimulator
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;deutsch_jozsa&lt;/span&gt;(oracle_type&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#39;balanced&amp;#39;&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; Implements the Deutsch-Jozsa algorithm
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; oracle_type: &amp;#39;constant&amp;#39; or &amp;#39;balanced&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# Create circuit with n qubits + 1 ancilla&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; n &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt; &lt;span style="color:#75715e"&gt;# number of input qubits&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; qc &lt;span style="color:#f92672"&gt;=&lt;/span&gt; QuantumCircuit(n &lt;span style="color:#f92672"&gt;+&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, n)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# Initialize ancilla qubit to |1⟩&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; qc&lt;span style="color:#f92672"&gt;.&lt;/span&gt;x(n)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# Apply Hadamard gates to all qubits&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; qc&lt;span style="color:#f92672"&gt;.&lt;/span&gt;h(range(n &lt;span style="color:#f92672"&gt;+&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; qc&lt;span style="color:#f92672"&gt;.&lt;/span&gt;barrier()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# Apply oracle&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; oracle_type &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;constant&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# Constant oracle (do nothing or flip all)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;pass&lt;/span&gt; &lt;span style="color:#75715e"&gt;# Identity operation&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# Balanced oracle example&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; i &lt;span style="color:#f92672"&gt;in&lt;/span&gt; range(n):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; qc&lt;span style="color:#f92672"&gt;.&lt;/span&gt;cx(i, n)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; qc&lt;span style="color:#f92672"&gt;.&lt;/span&gt;barrier()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# Apply Hadamard gates to input qubits&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; qc&lt;span style="color:#f92672"&gt;.&lt;/span&gt;h(range(n))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# Measure&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; qc&lt;span style="color:#f92672"&gt;.&lt;/span&gt;measure(range(n), range(n))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; qc
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Run the algorithm&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;qc &lt;span style="color:#f92672"&gt;=&lt;/span&gt; deutsch_jozsa(&lt;span style="color:#e6db74"&gt;&amp;#39;balanced&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;simulator &lt;span style="color:#f92672"&gt;=&lt;/span&gt; AerSimulator()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;job &lt;span style="color:#f92672"&gt;=&lt;/span&gt; simulator&lt;span style="color:#f92672"&gt;.&lt;/span&gt;run(qc, shots&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1024&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;result &lt;span style="color:#f92672"&gt;=&lt;/span&gt; job&lt;span style="color:#f92672"&gt;.&lt;/span&gt;result()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;counts &lt;span style="color:#f92672"&gt;=&lt;/span&gt; result&lt;span style="color:#f92672"&gt;.&lt;/span&gt;get_counts()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(&lt;span style="color:#e6db74"&gt;&amp;#34;Deutsch-Jozsa results:&amp;#34;&lt;/span&gt;, counts)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# If all 0s: function is constant&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Otherwise: function is balanced&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="bernstein-vazirani-algorithm"&gt;
+ Bernstein-Vazirani Algorithm
+ &lt;a class="anchor" href="#bernstein-vazirani-algorithm"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;This algorithm finds a hidden binary string with a single query, compared to n queries classically.&lt;/p&gt;</description></item><item><title>Video Courses</title><link>https://www.quantumcryptlab.org/learning-resources/video-courses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/learning-resources/video-courses/</guid><description>&lt;h1 id="video-courses"&gt;
+ Video Courses
+ &lt;a class="anchor" href="#video-courses"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="quantum-computing"&gt;
+ Quantum Computing
+ &lt;a class="anchor" href="#quantum-computing"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="university-courses"&gt;
+ University Courses
+ &lt;a class="anchor" href="#university-courses"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="online-platforms"&gt;
+ Online Platforms
+ &lt;a class="anchor" href="#online-platforms"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="youtube-channels"&gt;
+ YouTube Channels
+ &lt;a class="anchor" href="#youtube-channels"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h4 id="en-français"&gt;
+ En français:
+ &lt;a class="anchor" href="#en-fran%c3%a7ais"&gt;#&lt;/a&gt;
+&lt;/h4&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/@quantum-math"&gt;learning-resources&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="cryptography"&gt;
+ Cryptography
+ &lt;a class="anchor" href="#cryptography"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="university-courses-1"&gt;
+ University Courses
+ &lt;a class="anchor" href="#university-courses-1"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="online-platforms-1"&gt;
+ Online Platforms
+ &lt;a class="anchor" href="#online-platforms-1"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="youtube-channels-1"&gt;
+ YouTube Channels
+ &lt;a class="anchor" href="#youtube-channels-1"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h2 id="mathematics"&gt;
+ Mathematics
+ &lt;a class="anchor" href="#mathematics"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="linear-algebra"&gt;
+ Linear Algebra
+ &lt;a class="anchor" href="#linear-algebra"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="group-theory"&gt;
+ Group Theory
+ &lt;a class="anchor" href="#group-theory"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="boolean-algebra"&gt;
+ Boolean Algebra
+ &lt;a class="anchor" href="#boolean-algebra"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h2 id="artificial-intelligence-and-machine-learning"&gt;
+ Artificial Intelligence and Machine Learning
+ &lt;a class="anchor" href="#artificial-intelligence-and-machine-learning"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="machine-learning"&gt;
+ Machine Learning
+ &lt;a class="anchor" href="#machine-learning"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="deep-learning"&gt;
+ Deep Learning
+ &lt;a class="anchor" href="#deep-learning"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="ai-in-security"&gt;
+ AI in Security
+ &lt;a class="anchor" href="#ai-in-security"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h2 id="zero-knowledge-proofs-and-blockchain"&gt;
+ Zero-Knowledge Proofs and Blockchain
+ &lt;a class="anchor" href="#zero-knowledge-proofs-and-blockchain"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="zero-knowledge-proofs"&gt;
+ Zero-Knowledge Proofs
+ &lt;a class="anchor" href="#zero-knowledge-proofs"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="blockchain-and-cryptocurrencies"&gt;
+ Blockchain and Cryptocurrencies
+ &lt;a class="anchor" href="#blockchain-and-cryptocurrencies"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h2 id="specialized-topics"&gt;
+ Specialized Topics
+ &lt;a class="anchor" href="#specialized-topics"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="quantum-cryptography"&gt;
+ Quantum Cryptography
+ &lt;a class="anchor" href="#quantum-cryptography"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="post-quantum-cryptography"&gt;
+ Post-Quantum Cryptography
+ &lt;a class="anchor" href="#post-quantum-cryptography"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="quantum-machine-learning"&gt;
+ Quantum Machine Learning
+ &lt;a class="anchor" href="#quantum-machine-learning"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h2 id="conference-talks-and-research-presentations"&gt;
+ Conference Talks and Research Presentations
+ &lt;a class="anchor" href="#conference-talks-and-research-presentations"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="major-conferences"&gt;
+ Major Conferences
+ &lt;a class="anchor" href="#major-conferences"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="industry-talks"&gt;
+ Industry Talks
+ &lt;a class="anchor" href="#industry-talks"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h2 id="interactive-learning-platforms"&gt;
+ Interactive Learning Platforms
+ &lt;a class="anchor" href="#interactive-learning-platforms"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="hands-on-practice"&gt;
+ Hands-on Practice
+ &lt;a class="anchor" href="#hands-on-practice"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;h3 id="research-seminars"&gt;
+ Research Seminars
+ &lt;a class="anchor" href="#research-seminars"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;dl&gt;
+
+&lt;/dl&gt;</description></item><item><title>Advanced Qiskit Topics</title><link>https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-advanced/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-advanced/</guid><description>&lt;h2 id="running-on-real-quantum-hardware"&gt;
+ Running on Real Quantum Hardware
+ &lt;a class="anchor" href="#running-on-real-quantum-hardware"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="connecting-to-ibm-quantum"&gt;
+ Connecting to IBM Quantum
+ &lt;a class="anchor" href="#connecting-to-ibm-quantum"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;from&lt;/span&gt; qiskit_ibm_runtime &lt;span style="color:#f92672"&gt;import&lt;/span&gt; QiskitRuntimeService
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Load your account&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;service &lt;span style="color:#f92672"&gt;=&lt;/span&gt; QiskitRuntimeService(channel&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;ibm_quantum&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# List available backends&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;backends &lt;span style="color:#f92672"&gt;=&lt;/span&gt; service&lt;span style="color:#f92672"&gt;.&lt;/span&gt;backends()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; backend &lt;span style="color:#f92672"&gt;in&lt;/span&gt; backends:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;f&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;Backend: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;{&lt;/span&gt;backend&lt;span style="color:#f92672"&gt;.&lt;/span&gt;name&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;f&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34; Qubits: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;{&lt;/span&gt;backend&lt;span style="color:#f92672"&gt;.&lt;/span&gt;num_qubits&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;f&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34; Status: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;{&lt;/span&gt;backend&lt;span style="color:#f92672"&gt;.&lt;/span&gt;status()&lt;span style="color:#f92672"&gt;.&lt;/span&gt;status_msg&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;\n&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Select a backend&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;backend &lt;span style="color:#f92672"&gt;=&lt;/span&gt; service&lt;span style="color:#f92672"&gt;.&lt;/span&gt;backend(&lt;span style="color:#e6db74"&gt;&amp;#34;ibm_brisbane&amp;#34;&lt;/span&gt;) &lt;span style="color:#75715e"&gt;# Example backend name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="submitting-jobs-to-real-hardware"&gt;
+ Submitting Jobs to Real Hardware
+ &lt;a class="anchor" href="#submitting-jobs-to-real-hardware"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;from&lt;/span&gt; qiskit &lt;span style="color:#f92672"&gt;import&lt;/span&gt; QuantumCircuit, transpile
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Create your circuit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;qc &lt;span style="color:#f92672"&gt;=&lt;/span&gt; QuantumCircuit(&lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;qc&lt;span style="color:#f92672"&gt;.&lt;/span&gt;h(&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;qc&lt;span style="color:#f92672"&gt;.&lt;/span&gt;cx(&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;qc&lt;span style="color:#f92672"&gt;.&lt;/span&gt;measure([&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;], [&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Transpile for the specific backend&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;transpiled_qc &lt;span style="color:#f92672"&gt;=&lt;/span&gt; transpile(qc, backend&lt;span style="color:#f92672"&gt;=&lt;/span&gt;backend, optimization_level&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;3&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Submit job&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;job &lt;span style="color:#f92672"&gt;=&lt;/span&gt; backend&lt;span style="color:#f92672"&gt;.&lt;/span&gt;run(transpiled_qc, shots&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1024&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Monitor job status&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(&lt;span style="color:#e6db74"&gt;f&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;Job ID: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;{&lt;/span&gt;job&lt;span style="color:#f92672"&gt;.&lt;/span&gt;job_id()&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(&lt;span style="color:#e6db74"&gt;f&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;Job Status: &lt;/span&gt;&lt;span style="color:#e6db74"&gt;{&lt;/span&gt;job&lt;span style="color:#f92672"&gt;.&lt;/span&gt;status()&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Get results (this will wait for job completion)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;result &lt;span style="color:#f92672"&gt;=&lt;/span&gt; job&lt;span style="color:#f92672"&gt;.&lt;/span&gt;result()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;counts &lt;span style="color:#f92672"&gt;=&lt;/span&gt; result&lt;span style="color:#f92672"&gt;.&lt;/span&gt;get_counts()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(&lt;span style="color:#e6db74"&gt;&amp;#34;Results:&amp;#34;&lt;/span&gt;, counts)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="using-qiskit-runtime"&gt;
+ Using Qiskit Runtime
+ &lt;a class="anchor" href="#using-qiskit-runtime"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;from&lt;/span&gt; qiskit_ibm_runtime &lt;span style="color:#f92672"&gt;import&lt;/span&gt; Session, Sampler, Estimator
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Create a session&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;with&lt;/span&gt; Session(service&lt;span style="color:#f92672"&gt;=&lt;/span&gt;service, backend&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;ibm_brisbane&amp;#34;&lt;/span&gt;) &lt;span style="color:#66d9ef"&gt;as&lt;/span&gt; session:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;# Use Sampler for sampling circuits&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sampler &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Sampler(session&lt;span style="color:#f92672"&gt;=&lt;/span&gt;session)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; job &lt;span style="color:#f92672"&gt;=&lt;/span&gt; sampler&lt;span style="color:#f92672"&gt;.&lt;/span&gt;run(qc, shots&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1000&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; result &lt;span style="color:#f92672"&gt;=&lt;/span&gt; job&lt;span style="color:#f92672"&gt;.&lt;/span&gt;result()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(result)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="circuit-optimization-and-transpilation"&gt;
+ Circuit Optimization and Transpilation
+ &lt;a class="anchor" href="#circuit-optimization-and-transpilation"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="understanding-transpilation"&gt;
+ Understanding Transpilation
+ &lt;a class="anchor" href="#understanding-transpilation"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Transpilation converts your quantum circuit to match the constraints of specific hardware.&lt;/p&gt;</description></item><item><title/><link>https://www.quantumcryptlab.org/ai/ai-in-crypto/zkml-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.quantumcryptlab.org/ai/ai-in-crypto/zkml-overview/</guid><description/></item></channel></rss>

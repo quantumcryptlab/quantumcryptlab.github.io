@@ -1,0 +1,187 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+  Your First Quantum Circuit
+  #
+
+Let&rsquo;s start by creating a simple quantum circuit in Qiskit:
+from qiskit import QuantumCircuit
+
+# Create a quantum circuit with 2 qubits
+qc = QuantumCircuit(2)
+
+# Add a Hadamard gate to the first qubit
+qc.h(0)
+
+# Add a CNOT gate with qubit 0 as control and qubit 1 as target
+qc.cx(0, 1)
+
+# Visualize the circuit
+print(qc)
+This creates a Bell state, one of the fundamental entangled quantum states!"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-basic-circuits/"><meta property="og:site_name" content="Quantum Crypt Lab"><meta property="og:title" content="Basic Quantum Circuits"><meta property="og:description" content="Your First Quantum Circuit # Let’s start by creating a simple quantum circuit in Qiskit:
+from qiskit import QuantumCircuit # Create a quantum circuit with 2 qubits qc = QuantumCircuit(2) # Add a Hadamard gate to the first qubit qc.h(0) # Add a CNOT gate with qubit 0 as control and qubit 1 as target qc.cx(0, 1) # Visualize the circuit print(qc) This creates a Bell state, one of the fundamental entangled quantum states!"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="quantum-computing"><title>Basic Quantum Circuits | Quantum Crypt Lab</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=https://www.quantumcryptlab.org/quantum-computing/qiskit/qiskit-basic-circuits/><link rel=stylesheet href=/book.min.f4bc2b0f80cbd784c51fa6123079c0ec4d90946148cb1cc5e0279ca61d81a19d.css integrity="sha256-9LwrD4DL14TFH6YSMHnA7E2QlGFIyxzF4Cecph2BoZ0=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.0622bfed81787ede4cbbddffa8b3ba2fdb060e440d98bee2f4e22e824c8c2bf9.js integrity="sha256-BiK/7YF4ft5Mu93/qLO6L9sGDkQNmL7i9OIugkyMK/k=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>Quantum Crypt Lab</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/learning-resources/>Learning Resources</a><ul><li><a href=/learning-resources/books/>Books</a></li><li><a href=/learning-resources/papers/>Research Papers</a></li><li><a href=/learning-resources/video-courses/>Video Courses</a></li></ul></li><li><span>Quantum Computing</span><ul><li><a href=/quantum-computing/introduction-quantum-computing/>Introduction to Quantum Computing</a></li><li><a href=/quantum-computing/qiskit/>Qiskit</a><ul><li><a href=/quantum-computing/qiskit/qiskit-introduction/>Introduction to Qiskit</a></li><li><a href=/quantum-computing/qiskit/qiskit-installation/>Installation and Setup</a></li><li><a href=/quantum-computing/qiskit/qiskit-basic-circuits/ class=active>Basic Quantum Circuits</a></li><li><a href=/quantum-computing/qiskit/qiskit-algorithms/>Quantum Algorithms with Qiskit</a></li><li><a href=/quantum-computing/qiskit/qiskit-advanced/>Advanced Qiskit Topics</a></li></ul></li></ul></li><li><a href=/about/>test</a></li><li><a href=/quantum-physics/>Quantum Physics</a><ul><li><a href=/quantum-physics/quantum-entanglement/>Quantum Entanglement</a></li><li><a href=/quantum-physics/quantum-superposition/>Quantum Superposition</a></li></ul></li><li><a href=/cryptography/>Cryptography</a><ul><li><a href=/cryptography/zero-knowledge-proof/>Zero-Knowledge Proofs</a><ul><li><a href=/cryptography/zero-knowledge-proof/schnorrs-identification-protocol/>Schnorr's Identification Protocol</a><ul></ul></li></ul></li></ul></li><li><a href=/mathematics/>Mathematics</a><ul><li><a href=/mathematics/boolean-algebra/>Boolean Algebra</a><ul></ul></li><li><a href=/mathematics/group-theory/>Group Theory</a><ul></ul></li></ul></li><li><a href=/research/>Research</a><ul></ul></li><li><a href=/ai/>Artificial Intelligence</a><ul><li><a href=/ai/ai-in-crypto/>AI in crypto</a><ul></ul></li><li><a href=/ai/ai-security/>AI Security</a><ul><li><a href=/ai/ai-security/homomorphic-encryption/>homomorphic encryption</a></li></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>Basic Quantum Circuits</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#your-first-quantum-circuit>Your First Quantum Circuit</a></li><li><a href=#understanding-quantum-circuits>Understanding Quantum Circuits</a><ul><li><a href=#circuit-components>Circuit Components</a></li><li><a href=#creating-a-circuit>Creating a Circuit</a></li></ul></li><li><a href=#common-quantum-gates>Common Quantum Gates</a><ul><li><a href=#single-qubit-gates>Single-Qubit Gates</a></li><li><a href=#two-qubit-gates>Two-Qubit Gates</a></li><li><a href=#multi-qubit-gates>Multi-Qubit Gates</a></li></ul></li><li><a href=#measuring-qubits>Measuring Qubits</a></li><li><a href=#circuit-visualization>Circuit Visualization</a><ul><li><a href=#text-representation>Text Representation</a></li><li><a href=#matplotlib-drawer>Matplotlib Drawer</a></li><li><a href=#text-drawing-with-symbols>Text Drawing with Symbols</a></li><li><a href=#latex-style-drawing>LaTeX-style Drawing</a></li></ul></li><li><a href=#running-circuits-simulators>Running Circuits: Simulators</a><ul><li><a href=#using-aer-simulator>Using Aer Simulator</a></li><li><a href=#visualizing-results>Visualizing Results</a></li></ul></li><li><a href=#complete-example-bell-state>Complete Example: Bell State</a></li><li><a href=#useful-circuit-methods>Useful Circuit Methods</a></li><li><a href=#practice-exercises>Practice Exercises</a></li><li><a href=#next-steps>Next Steps</a></li></ul></nav></aside></header><article class="markdown book-article"><h2 id=your-first-quantum-circuit>Your First Quantum Circuit
+<a class=anchor href=#your-first-quantum-circuit>#</a></h2><p>Let&rsquo;s start by creating a simple quantum circuit in Qiskit:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit <span style=color:#f92672>import</span> QuantumCircuit
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create a quantum circuit with 2 qubits</span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Add a Hadamard gate to the first qubit</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>h(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Add a CNOT gate with qubit 0 as control and qubit 1 as target</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>cx(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Visualize the circuit</span>
+</span></span><span style=display:flex><span>print(qc)
+</span></span></code></pre></div><p>This creates a Bell state, one of the fundamental entangled quantum states!</p><h2 id=understanding-quantum-circuits>Understanding Quantum Circuits
+<a class=anchor href=#understanding-quantum-circuits>#</a></h2><h3 id=circuit-components>Circuit Components
+<a class=anchor href=#circuit-components>#</a></h3><p>A quantum circuit consists of:</p><ol><li><strong>Qubits</strong>: The quantum registers (analogous to classical bits)</li><li><strong>Gates</strong>: Operations that manipulate qubits</li><li><strong>Measurements</strong>: Reading the final state of qubits</li><li><strong>Classical Bits</strong>: Storage for measurement results</li></ol><h3 id=creating-a-circuit>Creating a Circuit
+<a class=anchor href=#creating-a-circuit>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit <span style=color:#f92672>import</span> QuantumCircuit
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create circuit with 3 qubits and 3 classical bits</span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>3</span>)
+</span></span></code></pre></div><h2 id=common-quantum-gates>Common Quantum Gates
+<a class=anchor href=#common-quantum-gates>#</a></h2><h3 id=single-qubit-gates>Single-Qubit Gates
+<a class=anchor href=#single-qubit-gates>#</a></h3><p><strong>Pauli Gates</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>qc <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># X gate (NOT gate) - flips |0⟩ to |1⟩</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>x(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Y gate - rotation around Y-axis</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>y(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Z gate - phase flip</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>z(<span style=color:#ae81ff>0</span>)
+</span></span></code></pre></div><p><strong>Hadamard Gate</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Creates superposition</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>h(<span style=color:#ae81ff>0</span>)  <span style=color:#75715e># Transforms |0⟩ to (|0⟩ + |1⟩)/√2</span>
+</span></span></code></pre></div><p><strong>Phase Gates</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> math
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># S gate (phase gate)</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>s(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># T gate</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>t(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Arbitrary phase rotation</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>p(math<span style=color:#f92672>.</span>pi<span style=color:#f92672>/</span><span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>0</span>)
+</span></span></code></pre></div><p><strong>Rotation Gates</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Rotation around X-axis</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>rx(math<span style=color:#f92672>.</span>pi<span style=color:#f92672>/</span><span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Rotation around Y-axis</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>ry(math<span style=color:#f92672>.</span>pi<span style=color:#f92672>/</span><span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Rotation around Z-axis</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>rz(math<span style=color:#f92672>.</span>pi<span style=color:#f92672>/</span><span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>0</span>)
+</span></span></code></pre></div><h3 id=two-qubit-gates>Two-Qubit Gates
+<a class=anchor href=#two-qubit-gates>#</a></h3><p><strong>CNOT (Controlled-NOT)</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>qc <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span><span style=color:#75715e># Control qubit 0, target qubit 1</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>cx(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>)
+</span></span></code></pre></div><p><strong>CZ (Controlled-Z)</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>qc<span style=color:#f92672>.</span>cz(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>)
+</span></span></code></pre></div><p><strong>SWAP Gate</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>qc<span style=color:#f92672>.</span>swap(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>)
+</span></span></code></pre></div><p><strong>Controlled Phase</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>qc<span style=color:#f92672>.</span>cp(math<span style=color:#f92672>.</span>pi<span style=color:#f92672>/</span><span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>)
+</span></span></code></pre></div><h3 id=multi-qubit-gates>Multi-Qubit Gates
+<a class=anchor href=#multi-qubit-gates>#</a></h3><p><strong>Toffoli (CCX) Gate</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>qc <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>3</span>)
+</span></span><span style=display:flex><span><span style=color:#75715e># Two control qubits (0 and 1), target qubit 2</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>ccx(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>)
+</span></span></code></pre></div><h2 id=measuring-qubits>Measuring Qubits
+<a class=anchor href=#measuring-qubits>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>qc <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Add some gates</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>h(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>cx(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Measure qubits into classical bits</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>measure([<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>], [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>])  <span style=color:#75715e># Measure qubits 0,1 into classical bits 0,1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Or measure all qubits</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>measure_all()
+</span></span></code></pre></div><h2 id=circuit-visualization>Circuit Visualization
+<a class=anchor href=#circuit-visualization>#</a></h2><h3 id=text-representation>Text Representation
+<a class=anchor href=#text-representation>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>print(qc)
+</span></span></code></pre></div><h3 id=matplotlib-drawer>Matplotlib Drawer
+<a class=anchor href=#matplotlib-drawer>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>qc<span style=color:#f92672>.</span>draw(<span style=color:#e6db74>&#39;mpl&#39;</span>)  <span style=color:#75715e># Creates a nice matplotlib figure</span>
+</span></span></code></pre></div><h3 id=text-drawing-with-symbols>Text Drawing with Symbols
+<a class=anchor href=#text-drawing-with-symbols>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>qc<span style=color:#f92672>.</span>draw(<span style=color:#e6db74>&#39;text&#39;</span>)  <span style=color:#75715e># ASCII art representation</span>
+</span></span></code></pre></div><h3 id=latex-style-drawing>LaTeX-style Drawing
+<a class=anchor href=#latex-style-drawing>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>qc<span style=color:#f92672>.</span>draw(<span style=color:#e6db74>&#39;latex&#39;</span>)  <span style=color:#75715e># Publication-quality diagrams</span>
+</span></span></code></pre></div><h2 id=running-circuits-simulators>Running Circuits: Simulators
+<a class=anchor href=#running-circuits-simulators>#</a></h2><h3 id=using-aer-simulator>Using Aer Simulator
+<a class=anchor href=#using-aer-simulator>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit_aer <span style=color:#f92672>import</span> AerSimulator
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit <span style=color:#f92672>import</span> transpile
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create a quantum circuit</span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>h(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>cx(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>measure([<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>], [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Use the Aer simulator</span>
+</span></span><span style=display:flex><span>simulator <span style=color:#f92672>=</span> AerSimulator()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Transpile the circuit for the simulator</span>
+</span></span><span style=display:flex><span>transpiled_qc <span style=color:#f92672>=</span> transpile(qc, simulator)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Run the circuit</span>
+</span></span><span style=display:flex><span>job <span style=color:#f92672>=</span> simulator<span style=color:#f92672>.</span>run(transpiled_qc, shots<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Get results</span>
+</span></span><span style=display:flex><span>result <span style=color:#f92672>=</span> job<span style=color:#f92672>.</span>result()
+</span></span><span style=display:flex><span>counts <span style=color:#f92672>=</span> result<span style=color:#f92672>.</span>get_counts()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(counts)
+</span></span><span style=display:flex><span><span style=color:#75715e># Output: {&#39;00&#39;: ~500, &#39;11&#39;: ~500}</span>
+</span></span></code></pre></div><h3 id=visualizing-results>Visualizing Results
+<a class=anchor href=#visualizing-results>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.visualization <span style=color:#f92672>import</span> plot_histogram
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Plot the measurement results</span>
+</span></span><span style=display:flex><span>plot_histogram(counts)
+</span></span></code></pre></div><h2 id=complete-example-bell-state>Complete Example: Bell State
+<a class=anchor href=#complete-example-bell-state>#</a></h2><p>Here&rsquo;s a complete example creating and measuring a Bell state:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> qiskit <span style=color:#f92672>import</span> QuantumCircuit
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit_aer <span style=color:#f92672>import</span> AerSimulator
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> qiskit.visualization <span style=color:#f92672>import</span> plot_histogram
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> matplotlib.pyplot <span style=color:#66d9ef>as</span> plt
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create circuit</span>
+</span></span><span style=display:flex><span>qc <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create Bell state</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>h(<span style=color:#ae81ff>0</span>)          <span style=color:#75715e># Put qubit 0 in superposition</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>cx(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>)      <span style=color:#75715e># Entangle qubits 0 and 1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Measure</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>measure([<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>], [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Visualize circuit</span>
+</span></span><span style=display:flex><span>print(qc)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Simulate</span>
+</span></span><span style=display:flex><span>simulator <span style=color:#f92672>=</span> AerSimulator()
+</span></span><span style=display:flex><span>job <span style=color:#f92672>=</span> simulator<span style=color:#f92672>.</span>run(qc, shots<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>)
+</span></span><span style=display:flex><span>result <span style=color:#f92672>=</span> job<span style=color:#f92672>.</span>result()
+</span></span><span style=display:flex><span>counts <span style=color:#f92672>=</span> result<span style=color:#f92672>.</span>get_counts()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Display results</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>Measurement results:&#34;</span>, counts)
+</span></span><span style=display:flex><span>plot_histogram(counts)
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>show()
+</span></span></code></pre></div><h2 id=useful-circuit-methods>Useful Circuit Methods
+<a class=anchor href=#useful-circuit-methods>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Get circuit depth</span>
+</span></span><span style=display:flex><span>depth <span style=color:#f92672>=</span> qc<span style=color:#f92672>.</span>depth()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Count operations</span>
+</span></span><span style=display:flex><span>op_count <span style=color:#f92672>=</span> qc<span style=color:#f92672>.</span>count_ops()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Get number of qubits</span>
+</span></span><span style=display:flex><span>num_qubits <span style=color:#f92672>=</span> qc<span style=color:#f92672>.</span>num_qubits
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Compose circuits</span>
+</span></span><span style=display:flex><span>qc1 <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>qc2 <span style=color:#f92672>=</span> QuantumCircuit(<span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>qc1<span style=color:#f92672>.</span>h(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>qc2<span style=color:#f92672>.</span>cx(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>combined <span style=color:#f92672>=</span> qc1<span style=color:#f92672>.</span>compose(qc2)  <span style=color:#75715e># Concatenate circuits</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Add barriers (for visualization)</span>
+</span></span><span style=display:flex><span>qc<span style=color:#f92672>.</span>barrier()
+</span></span></code></pre></div><h2 id=practice-exercises>Practice Exercises
+<a class=anchor href=#practice-exercises>#</a></h2><p>Try creating these circuits on your own:</p><ol><li><strong>Superposition</strong>: Put a single qubit in equal superposition</li><li><strong>Bell States</strong>: Create all four Bell states</li><li><strong>GHZ State</strong>: Create a 3-qubit GHZ state</li><li><strong>Quantum Teleportation</strong>: Implement a simple teleportation circuit</li></ol><h2 id=next-steps>Next Steps
+<a class=anchor href=#next-steps>#</a></h2><p>Now that you understand basic circuits, you&rsquo;re ready to:</p><ul><li>Implement quantum algorithms</li><li>Work with more complex gate sequences</li><li>Optimize circuits for real hardware</li><li>Explore quantum error correction</li></ul><p>In the next section, we&rsquo;ll explore how to implement fundamental quantum algorithms using Qiskit!</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#your-first-quantum-circuit>Your First Quantum Circuit</a></li><li><a href=#understanding-quantum-circuits>Understanding Quantum Circuits</a><ul><li><a href=#circuit-components>Circuit Components</a></li><li><a href=#creating-a-circuit>Creating a Circuit</a></li></ul></li><li><a href=#common-quantum-gates>Common Quantum Gates</a><ul><li><a href=#single-qubit-gates>Single-Qubit Gates</a></li><li><a href=#two-qubit-gates>Two-Qubit Gates</a></li><li><a href=#multi-qubit-gates>Multi-Qubit Gates</a></li></ul></li><li><a href=#measuring-qubits>Measuring Qubits</a></li><li><a href=#circuit-visualization>Circuit Visualization</a><ul><li><a href=#text-representation>Text Representation</a></li><li><a href=#matplotlib-drawer>Matplotlib Drawer</a></li><li><a href=#text-drawing-with-symbols>Text Drawing with Symbols</a></li><li><a href=#latex-style-drawing>LaTeX-style Drawing</a></li></ul></li><li><a href=#running-circuits-simulators>Running Circuits: Simulators</a><ul><li><a href=#using-aer-simulator>Using Aer Simulator</a></li><li><a href=#visualizing-results>Visualizing Results</a></li></ul></li><li><a href=#complete-example-bell-state>Complete Example: Bell State</a></li><li><a href=#useful-circuit-methods>Useful Circuit Methods</a></li><li><a href=#practice-exercises>Practice Exercises</a></li><li><a href=#next-steps>Next Steps</a></li></ul></nav></div></aside></main></body></html>
